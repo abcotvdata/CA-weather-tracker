@@ -35,8 +35,6 @@ second_table_html <- html_nodes(webpage1, "table")
 
 second_table_df <- html_table(second_table_html)[[1]]
 
-table_df = as.data.frame(table_df)
-
 
 table_df1 <- table_df %>%
   row_to_names(row_number = 1) %>% 
@@ -48,6 +46,7 @@ table_df1 <- table_df %>%
    mutate(`% of Average` = na_if_in(`% of Average`,~ grepl("[^0-9]", .))) %>% 
   drop_na(`% of Average`) %>% 
   mutate(`% of Average` = na_if(`% of Average`, "0")) %>% 
+  mutate(across(everything(), as.character)) %>% 
   mutate(na_if(., "---")) 
 
 
