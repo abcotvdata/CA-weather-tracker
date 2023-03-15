@@ -45,7 +45,7 @@ table_df1 <- table_df %>%
   mutate(`% of Average` = replace(`% of Average`, `% of Average` == "---", 0)) %>% 
    mutate(`% of Average` = na_if_in(`% of Average`,~ grepl("[^0-9]", .))) %>% 
   drop_na(`% of Average`) %>% 
-  mutate(`% of Average` = na_if(`% of Average`, "0")) %>% 
+  mutate(`% of Average` = na_if(`% of Average`, 0)) %>% 
   mutate(na_if(., "---")) 
 
 
