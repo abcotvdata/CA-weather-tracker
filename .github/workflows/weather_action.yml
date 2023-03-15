@@ -7,7 +7,7 @@ name: weather data
   
 jobs:
   render:
-    name: Pull latest shapefile, update maps
+    name: Pull latest data, update map
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
