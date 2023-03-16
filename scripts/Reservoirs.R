@@ -136,8 +136,13 @@ tag.map.footer <- tags$style(HTML("
   }
 "))
 
+today_UTC <- as.POSIXct(Sys.time())
+today_posix <- format(today_UTC, tz="America/Los_Angeles",usetz=TRUE)
+today <- as.Date(substr(as.character(today_posix), 1,10))
+today_display <- format(today, "%A, %b. %d, %Y")
+
 footer <- tags$div(
-  tag.map.footer, HTML("Source: California Department of Water Resources"))
+  tag.map.footer, HTML("<div> Source: California Department of Water Resources. </div> <div>Last updated",today_display,))
 
 reservoir_map <- leaflet(options = leafletOptions(zoomControl = FALSE, hoverToWake=FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
