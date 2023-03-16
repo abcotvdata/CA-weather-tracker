@@ -47,7 +47,8 @@ table_df1 <- table_df %>%
   drop_na(`% of Average`) %>% 
   mutate(`% of Average` = na_if(`% of Average`, "0")) %>% 
   mutate(across(everything(), as.character)) %>% 
-  mutate(na_if(., "---")) 
+  mutate(across(where(is.character), ~na_if(., "---")))
+ 
 
 
 second_table_df1 <- second_table_df %>% 
