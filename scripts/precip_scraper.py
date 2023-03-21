@@ -67,7 +67,8 @@ for month in months_years:
     time.sleep(1)
 
 
-    date = driver.find_element_by_id("tDatepicker")
+    date = driver.find_element(By.ID, "tDatepicker")
+
     date.click()
     date.clear()
     date.send_keys(Keys.RETURN)
