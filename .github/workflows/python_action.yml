@@ -20,6 +20,6 @@ jobs:
       - name: Install a new Chromium
         run: sudo apt install -y chromium-browser
       - name: Install all necessary packages
-        run: pip3 install requests beautifulsoup4 pandas webdriver-manager selenium plotly.express datetime timedelta plotly.io numpy json_normalize
+        run: pip3 install requests beautifulsoup4 pandas webdriver-manager selenium plotly.express datetime timedelta numpy json_normalize
       - name: Run the scraping script
         run: python scripts/precip_scraper.py
