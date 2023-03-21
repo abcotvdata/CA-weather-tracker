@@ -1,4 +1,4 @@
-name: scrape
+name: python scraper
 on:
   workflow_dispatch:
 jobs:
