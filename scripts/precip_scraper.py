@@ -180,7 +180,7 @@ results = results.replace("<br/>", "\n")
 
 print(results)
 
-filename = "CSVs/precip_sum_" + last_month_year_str + ".csv"
+filename = "precip_sum_" + last_month_year_str + ".csv"
 
 with open(filename,'w') as f:
     f.write('')
