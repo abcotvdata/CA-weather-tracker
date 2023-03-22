@@ -38,6 +38,7 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import numpy as np
 from pandas.io.json import json_normalize
+from datetime import date
 
 today = date.today()
 today_str = str(today)
