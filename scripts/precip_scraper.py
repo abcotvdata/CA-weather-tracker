@@ -178,7 +178,7 @@ results = str(results)
 results = results.replace("<pre>", "")
 results = results.replace("<br/>", "\n")
 
-results
+print(results)
 
 filename = "CSVs/precip_sum_" + last_month_year_str + ".csv"
 
