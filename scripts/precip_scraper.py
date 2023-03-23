@@ -212,7 +212,7 @@ time.sleep(1)
 
 #scrape this month
 
-startdate = driver.find_element(By.ID, "tDatepicker")
+startdate = driver.find_element(By.ID, "sDatepicker")
 startdate.click()
 startdate.clear()
 startdate.send_keys(Keys.RETURN)
