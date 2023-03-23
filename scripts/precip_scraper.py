@@ -39,6 +39,7 @@ import plotly.io as pio
 import numpy as np
 from pandas.io.json import json_normalize
 from datetime import date
+import os
 
 today = date.today()
 today_str = str(today)
@@ -187,3 +188,6 @@ with open(filename,'w') as f:
 
 with open(filename,'a') as f:
     f.write(results)
+      
+os.makedirs('CA-weather-tracker/CSVs', exist_ok=True)  
+df.to_csv('CA-weather-tracker/CSVs/'filename'.csv')  
