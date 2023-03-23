@@ -190,7 +190,7 @@ with open(filename,'a') as f:
     f.write(results)
     
 url = "https://xmacis.rcc-acis.org/"
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 driver.get(url)
 
 #page = driver.execute_script("return document.documentElement.outerHTML")
@@ -221,7 +221,7 @@ startdate.send_keys(today_first_of_month)
 time.sleep(1)
 startdate.send_keys(Keys.RETURN)
 
-enddate = driver.find_element_by_id("eDatepicker")
+enddate = driver.find_element(By.ID, "eDatepicker")
 enddate.click()
 enddate.clear()
 enddate.send_keys(Keys.RETURN)
