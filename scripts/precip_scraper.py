@@ -190,4 +190,4 @@ with open(filename,'a') as f:
     f.write(results)
       
 os.makedirs('CA-weather-tracker/CSVs', exist_ok=True)  
-df.to_csv('CA-weather-tracker/CSVs/'filename'.csv')  
+df.to_csv('CA-weather-tracker/CSVs/'filename)  
