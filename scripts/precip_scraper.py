@@ -188,3 +188,123 @@ with open(filename,'w') as f:
 
 with open(filename,'a') as f:
     f.write(results)
+    
+url = "https://xmacis.rcc-acis.org/"
+driver = webdriver.Chrome()
+driver.get(url)
+
+#page = driver.execute_script("return document.documentElement.outerHTML")
+
+multistation = driver.find_element(By.XPATH, '//*[@id="product_select"]/div[2]')
+multistation.click()
+
+time.sleep(1)
+
+daterange = driver.find_element(By.XPATH, '//*[@id="ui-id-19"]')
+daterange.click()
+
+time.sleep(1)
+
+csv = driver.find_element(By.XPATH, '//*[@id="outformat_csv"]')
+csv.click()
+
+time.sleep(1)
+
+#scrape this month
+
+startdate = driver.find_element(By.ID, "tDatepicker")
+startdate.click()
+startdate.clear()
+startdate.send_keys(Keys.RETURN)
+time.sleep(1)
+startdate.send_keys(today_first_of_month)
+time.sleep(1)
+startdate.send_keys(Keys.RETURN)
+
+enddate = driver.find_element_by_id("eDatepicker")
+enddate.click()
+enddate.clear()
+enddate.send_keys(Keys.RETURN)
+time.sleep(1)
+enddate.send_keys(today_str)
+time.sleep(1)
+enddate.send_keys(Keys.RETURN)
+
+time.sleep(1)
+
+variable = driver.find_element(By.XPATH, '//*[@id="element_area"]/div[1]/fieldset[1]/select')
+variable.click()
+
+time.sleep(1)
+
+precip = driver.find_element(By.XPATH, '//*[@id="element_area"]/div[1]/fieldset[1]/select/option[4]')
+precip.click()
+
+time.sleep(1)
+
+moreoptions = driver.find_element(By.XPATH, '//*[@id="option_select"]/div[4]/span[2]')
+moreoptions.click()
+
+time.sleep(1)
+
+coords = driver.find_element(By.XPATH, '//*[@id="stacrds"]')
+coords.click()
+
+time.sleep(1)
+
+countybox = driver.find_element(By.XPATH, '//*[@id="stacnty"]')
+countybox.click()
+
+time.sleep(1)
+
+stationselect = driver.find_element(By.XPATH, '//*[@id="station_acc"]')
+stationselect.click()
+
+time.sleep(1)
+
+stateselect = driver.find_element(By.XPATH, '//*[@id="acis-state_select_type"]/label[1]')
+stateselect.click()
+
+time.sleep(1)
+
+statedrop = driver.find_element(By.XPATH, '//*[@id="state"]')
+statedrop.click()
+
+time.sleep(1)
+
+california = driver.find_element(By.XPATH, '//*[@id="state"]/option[5]')
+california.click()
+
+time.sleep(1)
+
+go = driver.find_element(By.XPATH, '//*[@id="go"]/span')
+go.click()
+
+time.sleep(1)
+
+wait = WebDriverWait(driver, 60)
+wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="results_area"]/pre')))
+
+time.sleep(1)
+
+page = driver.execute_script("return document.documentElement.outerHTML")
+
+driver.quit()
+soup = BeautifulSoup(page)
+
+results = soup.find('div', {'id':'results_area'}).find('pre')
+
+results = str(results)
+
+results = results.replace("<pre>", "")
+results = results.replace("<br/>", "\n")
+
+print(results)
+
+filename = "precip_sum_" + this_month_str + ".csv"
+
+with open(filename,'w') as f:
+    f.write('')
+
+with open(filename,'a') as f:
+    f.write(results)
