@@ -18,7 +18,7 @@ jobs:
         run: |
           brew install gdal
       - name: Install dependencies and packages
-        run: Rscript -e 'install.packages(c("tidyverse","stringr","readr","dplyr","tidyr","sf","leaflet","htmlwidgets", "htmltools","leaflet.providers","leaflet.extras","here","readxl","rvest","janitor","fauxnaif", "raster", "zoo", "ggplot2"))'
+        run: Rscript -e 'install.packages(c("tidyverse","stringr","readr","dplyr","tidyr","sf","leaflet","htmlwidgets", "htmltools","leaflet.providers","leaflet.extras","here","readxl","rvest","janitor","fauxnaif", "raster", "zoo", "ggplot2", "gdal"))'
       - name: run script to fix raw data
         run: Rscript scripts/cleaning-monthly-data.R
       - name: Commit results
