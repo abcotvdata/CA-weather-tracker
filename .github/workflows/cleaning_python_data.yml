@@ -1,0 +1,28 @@
+on:
+    schedule:
+     - cron: '5 4 * * 2'
+    workflow_dispatch:
+
+name: precipitation data cleaning
+  
+jobs:
+  render:
+    name: clean latest data
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: r-lib/actions/setup-r@v1
+      - name: Set up pandoc for Rmd docs
+        uses: r-lib/actions/setup-pandoc@v1
+      - name: Install gdal
+        run: |
+          brew install gdal
+      - name: Install dependencies and packages
+        run: Rscript -e 'install.packages(c("tidyverse","stringr","readr","dplyr","tidyr","sf","leaflet","htmlwidgets", "htmltools","leaflet.providers","leaflet.extras","here","readxl","rvest","janitor","fauxnaif", "raster", "zoo", "ggplot2"))'
+      - name: run script to fix raw data
+        run: Rscript scripts/cleaning-monthly-data.R
+      - name: Commit results
+        run: |
+          git add -A
+          git commit -m 'Update data' || echo "No changes"
+          git push origin || echo "No changes to commit"
