@@ -50,4 +50,12 @@ precip_all_years <- rbind(precip_all_years1, precip_all_years2) %>%
   mutate(YearOnly = as.numeric(YearOnly)) %>% 
   mutate(MonthOnly = as.numeric(MonthOnly)) %>% 
   mutate(TotalPrecipitation_New = as.numeric(TotalPrecipitation_New))
+
 write.csv(precip_all_years, "CSVs/precip_all_years.csv", row.names = FALSE)
+
+precip_threadex_five_year <- precip_all_years %>%
+  filter(YearOnly >= 2018) %>%
+  filter(StationType == " ThreadEx")
+
+write.csv(precip_threadex_five_year, "CSVs/precip_threadex_stations.csv", row.names = FALSE)
+
