@@ -55,7 +55,9 @@ write.csv(precip_all_years, "CSVs/precip_all_years.csv", row.names = FALSE)
 
 precip_threadex_five_year <- precip_all_years %>%
   filter(YearOnly >= 2018) %>%
-  filter(StationType == " ThreadEx")
+  filter(StationType == " ThreadEx") %>%
+  select(Name, Month, TotalPrecipitation_New) %>%
+  spread(Name, TotalPrecipitation_New)
 
 write.csv(precip_threadex_five_year, "CSVs/precip_threadex_stations.csv", row.names = FALSE)
 
