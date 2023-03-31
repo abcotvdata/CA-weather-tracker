@@ -63,3 +63,249 @@ spread(Name, TotalPrecipitation_New)
 
 write.csv(precip_threadex_five_year1, "CSVs/precip_threadex_stations.csv", row.names = FALSE)
 
+
+# Alturas Area
+
+precip_threadex_five_year_alturas <- precip_threadex_five_year %>% 
+  filter(Basin == "Alturas Area")
+
+write.csv(precip_threadex_five_year_alturas, "CSVs/alturas.csv", row.names = FALSE)
+
+# Bakersfield Area
+
+precip_threadex_five_year_bakersfield <- precip_threadex_five_year %>% 
+  filter(Basin == "Bakersfield Area")
+
+write.csv(precip_threadex_five_year_bakersfield, "CSVs/bakersfield.csv", row.names = FALSE)
+
+# Bishop Area	
+
+precip_threadex_five_year_bishop <- precip_threadex_five_year %>% 
+  filter(Basin == "Bishop Area")
+
+write.csv(precip_threadex_five_year_bishop, "CSVs/bishop.csv", row.names = FALSE)
+
+# Burbank Glendale Pasadena Area	
+
+precip_threadex_five_year_burbank <- precip_threadex_five_year %>% 
+  filter(Basin == "Burbank Glendale Pasadena Area")
+
+write.csv(precip_threadex_five_year_burbank, "CSVs/burbank.csv", row.names = FALSE)
+
+# Camarillo Area	
+
+precip_threadex_five_year_camarillo <- precip_threadex_five_year %>% 
+  filter(Basin == "Camarillo Area")
+
+write.csv(precip_threadex_five_year_camarillo, "CSVs/camarillo.csv", row.names = FALSE)
+
+# Crescent City Area	
+
+precip_threadex_five_year_crescent <- precip_threadex_five_year %>% 
+  filter(Basin == "Crescent City Area")
+
+write.csv(precip_threadex_five_year_crescent, "CSVs/crescent.csv", row.names = FALSE)
+
+# El Cajon Area	
+
+precip_threadex_five_year_cajon <- precip_threadex_five_year %>% 
+  filter(Basin == "El Cajon Area")
+
+write.csv(precip_threadex_five_year_cajon, "CSVs/cajon.csv", row.names = FALSE)
+
+# El Centro Area	
+
+precip_threadex_five_year_centro <- precip_threadex_five_year %>% 
+  filter(Basin == "El Centro Area")
+
+write.csv(precip_threadex_five_year_centro, "CSVs/centro.csv", row.names = FALSE)
+
+# Escondido Area	
+
+precip_threadex_five_year_escondido <- precip_threadex_five_year %>% 
+  filter(Basin == "Escondido Area")
+
+write.csv(precip_threadex_five_year_escondido, "CSVs/escondido.csv", row.names = FALSE)
+
+# Eureka Area	
+
+precip_threadex_five_year_eureka <- precip_threadex_five_year %>% 
+  filter(Basin == "Eureka Area")
+
+write.csv(precip_threadex_five_year_eureka, "CSVs/eureka.csv", row.names = FALSE)
+
+# Fresno Area	
+
+precip_threadex_five_year_fresno <- precip_threadex_five_year %>% 
+  filter(Basin == "Fresno Area")
+
+write.csv(precip_threadex_five_year_fresno, "CSVs/fresno.csv", row.names = FALSE)
+
+# Hanford Area	
+
+precip_threadex_five_year_hanford <- precip_threadex_five_year %>% 
+  filter(Basin == "Hanford Area")
+
+write.csv(precip_threadex_five_year_hanford, "CSVs/hanford.csv", row.names = FALSE)
+
+# Lancaster Area	
+
+precip_threadex_five_year_lancaster <- precip_threadex_five_year %>% 
+  filter(Basin == "Lancaster Area")
+
+write.csv(precip_threadex_five_year_lancaster, "CSVs/lancaster.csv", row.names = FALSE)
+
+# Long Beach Area	
+
+precip_threadex_five_year_long_beach <- precip_threadex_five_year %>% 
+  filter(Basin == "Long Beach Area")
+
+write.csv(precip_threadex_five_year_long_beach, "CSVs/long_beach.csv", row.names = FALSE)
+
+# Los Angeles Airport Area	
+
+precip_threadex_five_year_la_airport <- precip_threadex_five_year %>% 
+  filter(Basin == "Los Angeles Airport Area")
+
+write.csv(precip_threadex_five_year_la_airport, "CSVs/la_airport.csv", row.names = FALSE)
+
+# Los Angeles Downtown Area	
+
+precip_threadex_five_year_la_downtown <- precip_threadex_five_year %>% 
+  filter(Basin == "Los Angeles Downtown Area")
+
+write.csv(precip_threadex_five_year_la_downtown, "CSVs/la_downtown.csv", row.names = FALSE)
+
+# Madera Area	
+
+precip_threadex_five_year_madera <- precip_threadex_five_year %>% 
+  filter(Basin == "Madera Area")
+
+write.csv(precip_threadex_five_year_madera, "CSVs/madera.csv", row.names = FALSE)
+
+# Merced Area	
+
+precip_threadex_five_year_merced <- precip_threadex_five_year %>% 
+  filter(Basin == "Merced Area")
+
+write.csv(precip_threadex_five_year_merced, "CSVs/merced.csv", row.names = FALSE)
+
+# Mount Shasta Area	
+
+precip_threadex_five_year_shasta <- precip_threadex_five_year %>% 
+  filter(Basin == "Mount Shasta Area")
+
+write.csv(precip_threadex_five_year_shasta, "CSVs/shasta.csv", row.names = FALSE)
+
+# Needles Area	
+
+precip_threadex_five_year_needles <- precip_threadex_five_year %>% 
+  filter(Basin == "Needles Area")
+
+write.csv(precip_threadex_five_year_needles, "CSVs/needles.csv", row.names = FALSE)
+
+# Oxnard Area	
+
+precip_threadex_five_year_oxnard <- precip_threadex_five_year %>% 
+  filter(Basin == "Oxnard Area")
+
+write.csv(precip_threadex_five_year_oxnard, "CSVs/oxnard.csv", row.names = FALSE)
+
+# Palm Springs Area	
+
+precip_threadex_five_year_palm_springs <- precip_threadex_five_year %>% 
+  filter(Basin == "Palm Springs Area")
+
+write.csv(precip_threadex_five_year_palm_springs, "CSVs/palm_springs.csv", row.names = FALSE)
+
+# Palmdale Area	
+
+precip_threadex_five_year_palmdale <- precip_threadex_five_year %>% 
+  filter(Basin == "Palmdale Area")
+
+write.csv(precip_threadex_five_year_palmdale, "CSVs/palmdale.csv", row.names = FALSE)
+
+# Ramona Area	
+
+precip_threadex_five_year_ramona <- precip_threadex_five_year %>% 
+  filter(Basin == "Ramona Area")
+
+write.csv(precip_threadex_five_year_ramona, "CSVs/ramona.csv", row.names = FALSE)
+
+# Redding Area
+
+precip_threadex_five_year_redding <- precip_threadex_five_year %>% 
+  filter(Basin == "Redding Area")
+
+write.csv(precip_threadex_five_year_redding, "CSVs/redding.csv", row.names = FALSE)
+
+# Riverside Area	
+
+precip_threadex_five_year_riverside <- precip_threadex_five_year %>% 
+  filter(Basin == "Riverside Area")
+
+write.csv(precip_threadex_five_year_riverside, "CSVs/riverside.csv", row.names = FALSE)
+
+# Sacramento Area	
+
+precip_threadex_five_year_sacramento <- precip_threadex_five_year %>% 
+  filter(Basin == "Sacramento Area")
+
+write.csv(precip_threadex_five_year_sacramento, "CSVs/sacramento.csv", row.names = FALSE)
+
+# Sacramento Downtown Area	
+
+precip_threadex_five_year_sacramento_downtown <- precip_threadex_five_year %>% 
+  filter(Basin == "Sacramento Downtown Area")
+
+write.csv(precip_threadex_five_year_sacramento_downtown, "CSVs/sacramento_downtown.csv", row.names = FALSE)
+
+# San Diego Area	
+
+precip_threadex_five_year_san_diego <- precip_threadex_five_year %>% 
+  filter(Basin == "San Diego Area")
+
+write.csv(precip_threadex_five_year_san_diego, "CSVs/san_diego.csv", row.names = FALSE)
+
+# San Francisco Airport Area	
+
+precip_threadex_five_year_sf_airport <- precip_threadex_five_year %>% 
+  filter(Basin == "San Francisco Airport Area")
+
+write.csv(precip_threadex_five_year_sf_airport, "CSVs/sf_airport.csv", row.names = FALSE)
+
+# San Jose Area	
+
+precip_threadex_five_year_san_jose <- precip_threadex_five_year %>% 
+  filter(Basin == "San Jose Area")
+
+write.csv(precip_threadex_five_year_san_jose, "CSVs/san_jose.csv", row.names = FALSE)
+
+# Santa Maria Area
+
+precip_threadex_five_year_santa_maria <- precip_threadex_five_year %>% 
+  filter(Basin == "Santa Maria Area")
+
+write.csv(precip_threadex_five_year_santa_maria, "CSVs/santa_maria.csv", row.names = FALSE)
+
+# Stockton Area	
+
+precip_threadex_five_year_stockton <- precip_threadex_five_year %>% 
+  filter(Basin == "Stockton Area")
+
+write.csv(precip_threadex_five_year_stockton, "CSVs/stockton.csv", row.names = FALSE)
+
+# Tahoe City Area	
+
+precip_threadex_five_year_tahoe <- precip_threadex_five_year %>% 
+  filter(Basin == "Tahoe City Area")
+
+write.csv(precip_threadex_five_year_tahoe, "CSVs/tahoe.csv", row.names = FALSE)
+
+# Ukiah Area
+
+precip_threadex_five_year_ukiah <- precip_threadex_five_year %>% 
+  filter(Basin == "Ukiah Area")
+
+write.csv(precip_threadex_five_year_ukiah, "CSVs/ukiah.csv", row.names = FALSE)
+
