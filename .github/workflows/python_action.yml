@@ -1,9 +1,9 @@
-name: python scraper
-
 on:
- schedule:
+    schedule:
      - cron: '20 4 * * *'
- workflow_dispatch:
+    workflow_dispatch:
+
+name: python scraper
  
 jobs:
   scrape:
