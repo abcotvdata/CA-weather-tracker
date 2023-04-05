@@ -37,7 +37,6 @@ from datetime import datetime, timedelta
 import plotly.graph_objects as go
 import plotly.io as pio
 import numpy as np
-from pandas.io.json import json_normalize
 from datetime import date
 import os
 
