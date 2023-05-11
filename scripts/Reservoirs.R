@@ -175,120 +175,120 @@ saveWidget(reservoir_map, file="reservoir_map.html")
 
 # snowpacks
 
-# url2 <- "https://wcc.sc.egov.usda.gov/reports/UpdateReport.html?report=California/Nevada&format=SNOTEL+Snowpack+Update+Report"
-# 
-# webpage1 <- read_html(url2)
-# 
-# snowpack_table <- html_table(html_nodes(webpage1, "table")[[3]], fill = TRUE)
-# 
-# names(snowpack_table) <- snowpack_table[1,]
-# snowpack_table <- snowpack_table[-1,]
-# snowpack_table[snowpack_table=="Basin Index (%)"] <- NA
-# 
-# snowpack_table1 <- snowpack_table %>% 
-#   drop_na(`Elev(ft)`) %>% 
-#   mutate(Basin = `Median Peak`) %>% 
-#   mutate(Basin = na_if_in(Basin,~ grepl("[0-9]", .))) %>% 
-#   mutate(Basin = na_if_in(Basin,~ grepl("[*]", .))) %>% 
-#   fill(Basin, .direction = "downup") %>% 
-#   mutate(Basin = na_if(Basin, "NEVADA")) %>% 
-#   drop_na(`Basin`) %>% 
-#   rename(`Percent of Today's Median` = `Today'sMedian`) %>% 
-#   rename(`Percent of Median Peak` = `Median Peak`) %>% 
-#   #rename(`Basin Site Name` = `Basin  Site Name`) %>% 
-#   rename(`Elevation` = `Elev(ft)`) %>% 
-#   rename(`Snow Totals` = `Current(in)`) %>% 
-#   rename(`Daily Median Snow Totals` = `Today'sMedian(in)`) 
-#   
-# snowpack_table2 <- snowpack_table1[!grepl("^[A-Z]+(?:[ -][A-Z]+)*", snowpack_table1$`Elevation`), ]
-# 
-# snowpack_table2$`Daily Median Snow Totals` <- gsub("\\s*\\([^\\)]+\\)\\s*$","",as.character(snowpack_table2$`Daily Median Snow Totals`))
-# 
-# snowpack_table2$`Median PeakDate` <- gsub("\\s*\\([^\\)]+\\)\\s*$","",as.character(snowpack_table2$`Median PeakDate`))
-# 
-# snowpack_table2$`MedianPeak(in)` <- gsub("\\s*\\([^\\)]+\\)\\s*$","",as.character(snowpack_table2$`MedianPeak(in)`))
-# 
-# 
-# # lake tahoe
-# 
-# snowpack_table2_lake_tahoe <- snowpack_table2 %>% 
-#   filter(Basin == "LAKE TAHOE")
-# 
-# write.csv(snowpack_table2_lake_tahoe, "lake_tahoe.csv", row.names = TRUE)
-# 
-# # truckee river
-# 
-# snowpack_table2_truckee_river <- snowpack_table2 %>% 
-#   filter(Basin == "TRUCKEE RIVER")
-# 
-# write.csv(snowpack_table2_truckee_river, "truckee_river.csv", row.names = TRUE)
-# 
-# # carson river
-# 
-# snowpack_table2_carson_river <- snowpack_table2 %>% 
-#   filter(Basin == "CARSON RIVER")
-# 
-# write.csv(snowpack_table2_carson_river, "carson_river.csv", row.names = TRUE)
-# 
-# # walker river
-# 
-# snowpack_table2_walker_river <- snowpack_table2 %>% 
-#   filter(Basin == "WALKER RIVER")
-# 
-# write.csv(snowpack_table2_walker_river, "walker_river.csv", row.names = TRUE)
-# 
-# # northeast great basin
-# 
-# snowpack_table2_northern_great_basin <- snowpack_table2 %>% 
-#   filter(Basin == "NORTHERN GREAT BASIN")
-# 
-# write.csv(snowpack_table2_northern_great_basin, "northern_great_basin.csv", row.names = TRUE)
-# 
-# # upper humboldt river
-# 
-# snowpack_table2_upper_humboldt_river <- snowpack_table2 %>% 
-#   filter(Basin == "UPPER HUMBOLDT RIVER")
-# 
-# write.csv(snowpack_table2_upper_humboldt_river, "upper_humboldt_river.csv", row.names = TRUE)
-# 
-# # lower humboldt river
-# 
-# snowpack_table2_lower_humboldt_river <- snowpack_table2 %>% 
-#   filter(Basin == "LOWER HUMBOLDT RIVER")
-# 
-# write.csv(snowpack_table2_lower_humboldt_river, "lower_humboldt_river.csv", row.names = TRUE)
-#  
-# # CLOVER VALLEY & FRANKLIN RIVER
-# 
-# snowpack_table2_clover_valley_franklin_river <- snowpack_table2 %>% 
-#   filter(Basin == "CLOVER VALLEY & FRANKLIN RIVER")
-# 
-# write.csv(snowpack_table2_clover_valley_franklin_river, "clover_valley_franklin_river.csv", row.names = TRUE)
-# 
-# # snake river
-# 
-# snowpack_table2_snake_river <- snowpack_table2 %>% 
-#   filter(Basin == "SNAKE RIVER")
-# 
-# write.csv(snowpack_table2_snake_river, "snake_river.csv", row.names = TRUE)
-# 
-# # owyhee river
-# 
-# snowpack_table2_owyhee_river <- snowpack_table2 %>% 
-#   filter(Basin == "OWYHEE RIVER")
-# 
-# write.csv(snowpack_table2_owyhee_river, "owyhee_river.csv", row.names = TRUE)
-# 
-# # eastern nevada 
-# 
-# snowpack_table2_eastern_nevada <- snowpack_table2 %>% 
-#   filter(Basin == "EASTERN NEVADA")
-# 
-# write.csv(snowpack_table2_eastern_nevada, "eastern_nevada.csv", row.names = TRUE)
-# 
-# # southern nevada 
-# 
-# snowpack_table2_southern_nevada <- snowpack_table2 %>% 
-#   filter(Basin == "SOUTHERN NEVADA - Spring Mountains")
-# 
-# write.csv(snowpack_table2_southern_nevada, "southern_nevada.csv", row.names = TRUE)
+url2 <- "https://wcc.sc.egov.usda.gov/reports/UpdateReport.html?report=California/Nevada&format=SNOTEL+Snowpack+Update+Report"
+
+webpage1 <- read_html(url2)
+
+snowpack_table <- html_table(html_nodes(webpage1, "table")[[3]], fill = TRUE)
+
+names(snowpack_table) <- snowpack_table[1,]
+snowpack_table <- snowpack_table[-1,]
+snowpack_table[snowpack_table=="Basin Index (%)"] <- NA
+
+snowpack_table1 <- snowpack_table %>%
+  drop_na(`Elev(ft)`) %>%
+  mutate(Basin = `Median Peak`) %>%
+  mutate(Basin = na_if_in(Basin,~ grepl("[0-9]", .))) %>%
+  mutate(Basin = na_if_in(Basin,~ grepl("[*]", .))) %>%
+  fill(Basin, .direction = "downup") %>%
+  mutate(Basin = na_if(Basin, "NEVADA")) %>%
+  drop_na(`Basin`) %>%
+  rename(`Percent of Today's Median` = `Today'sMedian`) %>%
+  rename(`Percent of Median Peak` = `Median Peak`) %>%
+  #rename(`Basin Site Name` = `Basin  Site Name`) %>%
+  rename(`Elevation` = `Elev(ft)`) %>%
+  rename(`Snow Totals` = `Current(in)`) %>%
+  rename(`Daily Median Snow Totals` = `Today'sMedian(in)`)
+
+snowpack_table2 <- snowpack_table1[!grepl("^[A-Z]+(?:[ -][A-Z]+)*", snowpack_table1$`Elevation`), ]
+
+snowpack_table2$`Daily Median Snow Totals` <- gsub("\\s*\\([^\\)]+\\)\\s*$","",as.character(snowpack_table2$`Daily Median Snow Totals`))
+
+snowpack_table2$`Median PeakDate` <- gsub("\\s*\\([^\\)]+\\)\\s*$","",as.character(snowpack_table2$`Median PeakDate`))
+
+snowpack_table2$`MedianPeak(in)` <- gsub("\\s*\\([^\\)]+\\)\\s*$","",as.character(snowpack_table2$`MedianPeak(in)`))
+
+
+# lake tahoe
+
+snowpack_table2_lake_tahoe <- snowpack_table2 %>%
+  filter(Basin == "LAKE TAHOE")
+
+write.csv(snowpack_table2_lake_tahoe, "lake_tahoe.csv", row.names = TRUE)
+
+# truckee river
+
+snowpack_table2_truckee_river <- snowpack_table2 %>%
+  filter(Basin == "TRUCKEE RIVER")
+
+write.csv(snowpack_table2_truckee_river, "truckee_river.csv", row.names = TRUE)
+
+# carson river
+
+snowpack_table2_carson_river <- snowpack_table2 %>%
+  filter(Basin == "CARSON RIVER")
+
+write.csv(snowpack_table2_carson_river, "carson_river.csv", row.names = TRUE)
+
+# walker river
+
+snowpack_table2_walker_river <- snowpack_table2 %>%
+  filter(Basin == "WALKER RIVER")
+
+write.csv(snowpack_table2_walker_river, "walker_river.csv", row.names = TRUE)
+
+# northeast great basin
+
+snowpack_table2_northern_great_basin <- snowpack_table2 %>%
+  filter(Basin == "NORTHERN GREAT BASIN")
+
+write.csv(snowpack_table2_northern_great_basin, "northern_great_basin.csv", row.names = TRUE)
+
+# upper humboldt river
+
+snowpack_table2_upper_humboldt_river <- snowpack_table2 %>%
+  filter(Basin == "UPPER HUMBOLDT RIVER")
+
+write.csv(snowpack_table2_upper_humboldt_river, "upper_humboldt_river.csv", row.names = TRUE)
+
+# lower humboldt river
+
+snowpack_table2_lower_humboldt_river <- snowpack_table2 %>%
+  filter(Basin == "LOWER HUMBOLDT RIVER")
+
+write.csv(snowpack_table2_lower_humboldt_river, "lower_humboldt_river.csv", row.names = TRUE)
+
+# CLOVER VALLEY & FRANKLIN RIVER
+
+snowpack_table2_clover_valley_franklin_river <- snowpack_table2 %>%
+  filter(Basin == "CLOVER VALLEY & FRANKLIN RIVER")
+
+write.csv(snowpack_table2_clover_valley_franklin_river, "clover_valley_franklin_river.csv", row.names = TRUE)
+
+# snake river
+
+snowpack_table2_snake_river <- snowpack_table2 %>%
+  filter(Basin == "SNAKE RIVER")
+
+write.csv(snowpack_table2_snake_river, "snake_river.csv", row.names = TRUE)
+
+# owyhee river
+
+snowpack_table2_owyhee_river <- snowpack_table2 %>%
+  filter(Basin == "OWYHEE RIVER")
+
+write.csv(snowpack_table2_owyhee_river, "owyhee_river.csv", row.names = TRUE)
+
+# eastern nevada
+
+snowpack_table2_eastern_nevada <- snowpack_table2 %>%
+  filter(Basin == "EASTERN NEVADA")
+
+write.csv(snowpack_table2_eastern_nevada, "eastern_nevada.csv", row.names = TRUE)
+
+# southern nevada
+
+snowpack_table2_southern_nevada <- snowpack_table2 %>%
+  filter(Basin == "SOUTHERN NEVADA - Spring Mountains")
+
+write.csv(snowpack_table2_southern_nevada, "southern_nevada.csv", row.names = TRUE)
