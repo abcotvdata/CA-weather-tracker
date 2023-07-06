@@ -1,4 +1,4 @@
-Data for July 1, 2023 through July 5, 2023
+Data for July 1, 2023 through July 6, 2023
 
 Name, StationType, County, Longitude, Latitude, Elevation, TotalPrecipitation
 BARSTOW-DAGGETT AIRPORT, WBAN, San Bernardino, -116.787, 34.854, 1919, 0.00
@@ -26,6 +26,7 @@ MERCED MUNICIPAL AP, WBAN, Merced, -120.518, 37.286, 152, 0.00
 NAPA STATE HOSPITAL, COOP, Napa, -122.265, 38.278, 35, 0.00
 OJAI, COOP, Ventura, -119.227, 34.448, 745, 0.00
 ORLAND, COOP, Glenn, -122.200, 39.746, 254, 0.00
+ORLEANS, COOP, Humboldt, -123.539, 41.302, 403, 0.00
 PASO ROBLES, COOP, San Luis Obispo, -120.685, 35.628, 730, 0.00
 PETALUMA AIRPORT, COOP, Sonoma, -122.608, 38.258, 20, 0.00
 QUINCY, COOP, Plumas, -120.947, 39.937, 3420, 0.00
@@ -36,10 +37,22 @@ WASCO, COOP, Kern, -119.352, 35.589, 291, 0.00
 WILLOWS 6 W, COOP, Glenn, -122.305, 39.523, 234, 0.00
 YREKA, COOP, Siskiyou, -122.641, 41.703, 2709, 0.00
 EUREKA WFO WOODLEY ISLAND, WBAN, Humboldt, -124.160, 40.810, 20, T
+SAN LUIS OBISPO POLY, WBAN, San Luis Obispo, -120.662, 35.306, 308, 0.00
 CAMPO, COOP, San Diego, -116.470, 32.626, 2630, 0.00
 EL CENTRO 2 SSW, COOP, Imperial, -115.562, 32.767, -30, 0.00
 IMPERIAL COUNTY AP, WBAN, Imperial, -115.577, 32.835, -55, 0.00
 ALPINE, COOP, San Diego, -116.777, 32.836, 1695, 0.00
+EL CAPITAN DAM, COOP, San Diego, -116.815, 32.886, 600, 0.00
+LAKESIDE 2 E, COOP, San Diego, -116.895, 32.854, 690, 0.00
+POWAY VALLEY, COOP, San Diego, -117.031, 33.020, 648, 0.00
+CARLSBAD MCCLELLAN PALOMAR AP, WBAN, San Diego, -117.277, 33.130, 313, 0.00
+HENSHAW DAM, COOP, San Diego, -116.761, 33.237, 2700, 0.00
+VISTA, COOP, San Diego, -117.232, 33.235, 430, 0.00
+OCEANSIDE MARINA, COOP, San Diego, -117.395, 33.210, 10, 0.00
+BORREGO DESERT PARK, COOP, San Diego, -116.404, 33.256, 810, 0.00
+PALOMAR MTN OBSERVATORY, COOP, San Diego, -116.840, 33.378, 5550, 0.00
+BLYTHE ASOS, WBAN, Riverside, -114.715, 33.619, 395, 0.00
+DESERT RESORTS REGIONAL AP, WBAN, Riverside, -116.164, 33.632, -118, 0.00
 SANTA ANA JOHN WAYNE AP, WBAN, Orange, -117.867, 33.680, 43, 0.00
 HAYFIELD PUMPING PLANT, COOP, Riverside, -115.629, 33.704, 1370, 0.00
 IDYLLWILD FIRE DEPT, COOP, Riverside, -116.707, 33.757, 5380, 0.00
@@ -59,6 +72,7 @@ CHINO AP, WBAN, San Bernardino, -117.625, 33.976, 636, 0.00
 CULVER CITY, COOP, Los Angeles, -118.414, 34.005, 92, 0.00
 SANTA MONICA MUNICIPAL AP, WBAN, Los Angeles, -118.447, 34.021, 175, 0.00
 ONTARIO INTL AP, WBAN, San Bernardino, -117.577, 34.053, 924, 0.00
+JOSHUA TREE, COOP, San Bernardino, -116.275, 34.147, 2563, 0.00
 WOODLAND HILLS PIERCE COLLEGE, COOP, Los Angeles, -118.574, 34.182, 790, 0.00
 VAN NUYS AP, WBAN, Los Angeles, -118.491, 34.212, 785, 0.00
 CAMARILLO AP, WBAN, Ventura, -119.088, 34.211, 71, 0.00
@@ -72,16 +86,6 @@ PALMDALE AP, WBAN, Los Angeles, -118.083, 34.629, 2509, 0.00
 LOMPOC AP, WBAN, Santa Barbara, -120.467, 34.667, 88, 0.00
 LANCASTER, WBAN, Los Angeles, -118.213, 34.741, 2338, 0.00
 SANDBERG, WBAN, Los Angeles, -118.725, 34.744, 4510, 0.00
-EL CAPITAN DAM, COOP, San Diego, -116.815, 32.886, 600, 0.00
-LAKESIDE 2 E, COOP, San Diego, -116.895, 32.854, 690, 0.00
-POWAY VALLEY, COOP, San Diego, -117.031, 33.020, 648, 0.00
-CARLSBAD MCCLELLAN PALOMAR AP, WBAN, San Diego, -117.277, 33.130, 313, 0.00
-HENSHAW DAM, COOP, San Diego, -116.761, 33.237, 2700, 0.00
-VISTA, COOP, San Diego, -117.232, 33.235, 430, 0.00
-OCEANSIDE MARINA, COOP, San Diego, -117.395, 33.210, 10, 0.00
-BORREGO DESERT PARK, COOP, San Diego, -116.404, 33.256, 810, 0.00
-BLYTHE ASOS, WBAN, Riverside, -114.715, 33.619, 395, 0.00
-DESERT RESORTS REGIONAL AP, WBAN, Riverside, -116.164, 33.632, -118, 0.00
 BAKERSFIELD AP, WBAN, Kern, -119.055, 35.434, 490, 0.00
 BUTTONWILLOW, COOP, Kern, -119.470, 35.403, 225, 0.00
 TRONA, COOP, San Bernardino, -117.391, 35.764, 1695, 0.00
@@ -157,44 +161,6 @@ GASQUET RS, COOP, Del Norte, -123.967, 41.846, 387, 0.00
 BARSTOW, COOP, San Bernardino, -117.022, 34.893, 2220, 0.00
 EL CAJON, COOP, San Diego, -116.928, 32.801, 495, 0.00
 MARKLEY COVE, COOP, Napa, -122.124, 38.492, 480, 0.00
-BURBANK VALLEY PUMP PLANT, COOP, Los Angeles, -118.348, 34.187, 655, 0.00
-BURBANK GLENDALE PASADENA AP, WBAN, Los Angeles, -118.365, 34.200, 731, 0.00
-MOUNT SHASTA, COOP, Siskiyou, -122.317, 41.322, 3613, 0.00
-WATSONVILLE MUNICIPAL AIRPORT, WBAN, Santa Cruz, -121.790, 36.939, 162, 0.00
-SANTA ROSA SONOMA CO AP, WBAN, Sonoma, -122.811, 38.504, 119, 0.00
-HEARST CASTLE, COOP, San Luis Obispo, -121.168, 35.684, 1526, 0.00
-TAHOMA, COOP, El Dorado, -120.129, 39.060, 6315, 0.00
-CORONA MUNICIPAL AIRPORT, WBAN, Riverside, -117.602, 33.898, 533, 0.00
-MCOLF CAMP PENDLETON RED BEACH AIRPORT, WBAN, San Diego, -117.456, 33.286, 89, T
-SOUTH LAKE F.S, COOP, Kern, -118.361, 35.647, 2654, 0.00
-Burbank Glendale Pasadena Area, ThreadEx, -, -, -, -, 0.00
-Camarillo Area, ThreadEx, -, -, -, -, 0.00
-Needles Area, ThreadEx, -, -, -, -, 0.00
-Oxnard Area, ThreadEx, -, -, -, -, 0.00
-Palm Springs Area, ThreadEx, -, -, -, -, 0.00
-Riverside Area, ThreadEx, -, -, -, -, 0.00
-Ramona Area, ThreadEx, -, -, -, -, 0.00
-LONG VALLEY 2, COOP, Riverside, -116.642, 33.813, 8380, 0.00
-VALLEY CENTER 1N, COOP, San Diego, -117.038, 33.222, 1290, 0.00
-Northern CA 8 Station Index, null, -, -, -, -, 0.00
-San Joaquin 5 Station Index, null, -, -, -, -, 0.00
-Tulare 6 Station Index, null, -, -, -, -, 0.00
-Crescent City Area, ThreadEx, -, -, -, -, 0.00
-Escondido Area, ThreadEx, -, -, -, -, 0.00
-Tahoe City Area, ThreadEx, -, -, -, -, 0.00
-Ukiah Area, ThreadEx, -, -, -, -, T
-Alturas Area, ThreadEx, -, -, -, -, 0.00
-Mount Shasta Area, ThreadEx, -, -, -, -, 0.00
-Palmdale Area, ThreadEx, -, -, -, -, 0.00
-Lancaster Area, ThreadEx, -, -, -, -, 0.00
-El Cajon Area, ThreadEx, -, -, -, -, 0.00
-Hanford Area, ThreadEx, -, -, -, -, 0.00
-El Centro Area, ThreadEx, -, -, -, -, 0.00
-Madera Area, ThreadEx, -, -, -, -, 0.00
-Merced Area, ThreadEx, -, -, -, -, 0.00
-San Jose Area, ThreadEx, -, -, -, -, 0.00
-MODESTO IRRIGATION DISTRICT, COOP, Stanislaus, -120.003, 37.644, 88, 0.00
-ALTURAS 9 ENE, COOP, Modoc, -120.364, 41.515, 5307, 0.00
 LORAINE 5 NNE, COOP, Kern, -118.412, 35.384, 4235, 0.00
 LEE VINING, COOP, Mono, -119.119, 37.957, 6797, 0.00
 ANAHEIM, COOP, Orange, -117.842, 33.865, 235, 0.00
@@ -222,6 +188,11 @@ MOUNT SHASTA, WBAN, Siskiyou, -122.317, 41.315, 3553, 0.00
 RED BLUFF MUNI AP, WBAN, Tehama, -122.255, 40.152, 354, 0.00
 NEEDLES AIRPORT, WBAN, San Bernardino, -114.618, 34.768, 888, 0.00
 SUSANVILLE 2SW, COOP, Lassen, -120.663, 40.417, 4212, 0.00
+BURBANK GLENDALE PASADENA AP, WBAN, Los Angeles, -118.365, 34.200, 731, 0.00
+MOUNT SHASTA, COOP, Siskiyou, -122.317, 41.322, 3613, 0.00
+WATSONVILLE MUNICIPAL AIRPORT, WBAN, Santa Cruz, -121.790, 36.939, 162, 0.00
+SANTA ROSA SONOMA CO AP, WBAN, Sonoma, -122.811, 38.504, 119, 0.00
+HEARST CASTLE, COOP, San Luis Obispo, -121.168, 35.684, 1526, 0.00
 OCOTILLO WELLS 2W, COOP, San Diego, -116.169, 33.155, 390, 0.00
 IRVINE RANCH, COOP, Orange, -117.723, 33.720, 540, 0.00
 MT. LAGUNA #3, COOP, San Diego, -116.419, 32.867, 5920, 0.00
@@ -251,4 +222,38 @@ LEMOORE REEVES NAS, WBAN, Fresno, -119.950, 36.333, 232, 0.00
 CHIRIACO SUMMIT, COOP, Riverside, -115.721, 33.662, 1706, 0.00
 YUCCA MESA, COOP, San Bernardino, -116.407, 34.218, 3445, 0.00
 JOHNSON VALLEY, COOP, San Bernardino, -116.538, 34.359, 3167, 0.00
-MORONGO VALLEY NORTH, COOP, San Bernardino, -116.562, 34.086, 3145, 0.00</pre>
+MORONGO VALLEY NORTH, COOP, San Bernardino, -116.562, 34.086, 3145, 0.00
+BURBANK VALLEY PUMP PLANT, COOP, Los Angeles, -118.348, 34.187, 655, 0.00
+TAHOMA, COOP, El Dorado, -120.129, 39.060, 6315, 0.00
+CORONA MUNICIPAL AIRPORT, WBAN, Riverside, -117.602, 33.898, 533, 0.00
+VERDI 2W, COOP, Sierra, -120.027, 39.521, 5429, 0.00
+Crescent City Area, ThreadEx, -, -, -, -, 0.00
+Escondido Area, ThreadEx, -, -, -, -, 0.00
+Tahoe City Area, ThreadEx, -, -, -, -, 0.00
+Ukiah Area, ThreadEx, -, -, -, -, T
+Alturas Area, ThreadEx, -, -, -, -, 0.00
+Mount Shasta Area, ThreadEx, -, -, -, -, 0.00
+Palmdale Area, ThreadEx, -, -, -, -, 0.00
+Lancaster Area, ThreadEx, -, -, -, -, 0.00
+El Cajon Area, ThreadEx, -, -, -, -, 0.00
+Hanford Area, ThreadEx, -, -, -, -, 0.00
+El Centro Area, ThreadEx, -, -, -, -, 0.00
+Madera Area, ThreadEx, -, -, -, -, 0.00
+Merced Area, ThreadEx, -, -, -, -, 0.00
+San Jose Area, ThreadEx, -, -, -, -, 0.00
+MODESTO IRRIGATION DISTRICT, COOP, Stanislaus, -120.003, 37.644, 88, 0.00
+ALTURAS 9 ENE, COOP, Modoc, -120.364, 41.515, 5307, 0.00
+MCOLF CAMP PENDLETON RED BEACH AIRPORT, WBAN, San Diego, -117.456, 33.286, 89, T
+SOUTH LAKE F.S, COOP, Kern, -118.361, 35.647, 2654, 0.00
+Burbank Glendale Pasadena Area, ThreadEx, -, -, -, -, 0.00
+Camarillo Area, ThreadEx, -, -, -, -, 0.00
+Needles Area, ThreadEx, -, -, -, -, 0.00
+Oxnard Area, ThreadEx, -, -, -, -, 0.00
+Palm Springs Area, ThreadEx, -, -, -, -, 0.00
+Riverside Area, ThreadEx, -, -, -, -, 0.00
+Ramona Area, ThreadEx, -, -, -, -, 0.00
+LONG VALLEY 2, COOP, Riverside, -116.642, 33.813, 8380, 0.00
+VALLEY CENTER 1N, COOP, San Diego, -117.038, 33.222, 1290, 0.00
+Northern CA 8 Station Index, null, -, -, -, -, 0.00
+San Joaquin 5 Station Index, null, -, -, -, -, 0.00
+Tulare 6 Station Index, null, -, -, -, -, 0.00</pre>
