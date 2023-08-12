@@ -4127,7 +4127,7 @@ function asArray(value) {
 
 	L.TileLayer.Provider.providers = {
 		OpenStreetMap: {
-			url: '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 			options: {
 				maxZoom: 19,
 				attribution:
@@ -4136,27 +4136,27 @@ function asArray(value) {
 			variants: {
 				Mapnik: {},
 				DE: {
-					url: '//{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
+					url: 'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
 					options: {
 						maxZoom: 18
 					}
 				},
 				CH: {
-					url: '//tile.osm.ch/switzerland/{z}/{x}/{y}.png',
+					url: 'https://tile.osm.ch/switzerland/{z}/{x}/{y}.png',
 					options: {
 						maxZoom: 18,
 						bounds: [[45, 5], [48, 11]]
 					}
 				},
 				France: {
-					url: '//{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+					url: 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
 					options: {
 						maxZoom: 20,
-						attribution: '&copy; Openstreetmap France | {attribution.OpenStreetMap}'
+						attribution: '&copy; OpenStreetMap France | {attribution.OpenStreetMap}'
 					}
 				},
 				HOT: {
-					url: '//{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+					url: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
 					options: {
 						attribution:
 							'{attribution.OpenStreetMap}, ' +
@@ -4165,7 +4165,7 @@ function asArray(value) {
 					}
 				},
 				BZH: {
-					url: '//tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',
+					url: 'https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',
 					options: {
 						attribution: '{attribution.OpenStreetMap}, Tiles courtesy of <a href="http://www.openstreetmap.bzh/" target="_blank">Breton OpenStreetMap Team</a>',
 						bounds: [[46.2, -5.5], [50, 0.7]]
@@ -4174,16 +4174,16 @@ function asArray(value) {
 			}
 		},
 		OpenSeaMap: {
-			url: '//tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
+			url: 'https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
 			options: {
 				attribution: 'Map data: &copy; <a href="http://www.openseamap.org">OpenSeaMap</a> contributors'
 			}
 		},
-		OpenPtMap: {
-			url: 'http://openptmap.org/tiles/{z}/{x}/{y}.png',
+		OPNVKarte: {
+			url: 'https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png',
 			options: {
-				maxZoom: 17,
-				attribution: 'Map data: &copy; <a href="http://www.openptmap.org">OpenPtMap</a> contributors'
+				maxZoom: 18,
+				attribution: 'Map <a href="https://memomaps.de/">memomaps.de</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data {attribution.OpenStreetMap}'
 			}
 		},
 		OpenTopoMap: {
@@ -4208,10 +4208,31 @@ function asArray(value) {
 			}
 		},
 		SafeCast: {
-			url: '//s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png',
+			url: 'https://s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png',
 			options: {
 				maxZoom: 16,
 				attribution: 'Map data: {attribution.OpenStreetMap} | Map style: &copy; <a href="https://blog.safecast.org/about/">SafeCast</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+			}
+		},
+		Stadia: {
+			url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
+			options: {
+				maxZoom: 20,
+				attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+			},
+			variants: {
+				AlidadeSmooth: {
+					url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'
+				},
+				AlidadeSmoothDark: {
+					url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+				},
+				OSMBright: {
+					url: 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
+				},
+				Outdoors: {
+					url: 'https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png'
+				}
 			}
 		},
 		Thunderforest: {
@@ -4247,60 +4268,17 @@ function asArray(value) {
 				Neighbourhood: 'neighbourhood'
 			}
 		},
-		OpenMapSurfer: {
-			url: 'https://maps.heigit.org/openmapsurfer/tiles/{variant}/webmercator/{z}/{x}/{y}.png',
+		CyclOSM: {
+			url: 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
 			options: {
-				maxZoom: 19,
-				variant: 'roads',
-				attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> | Map data '
-			},
-			variants: {
-				Roads: {
-					options: {
-						variant: 'roads',
-						attribution: '{attribution.OpenMapSurfer}{attribution.OpenStreetMap}'
-					}
-				},
-				Hybrid: {
-					options: {
-						variant: 'hybrid',
-						attribution: '{attribution.OpenMapSurfer}{attribution.OpenStreetMap}'
-					}
-				},
-				AdminBounds: {
-					options: {
-						variant: 'adminb',
-						maxZoom: 18,
-						attribution: '{attribution.OpenMapSurfer}{attribution.OpenStreetMap}'
-					}
-				},
-				ContourLines: {
-					options: {
-						variant: 'asterc',
-						maxZoom: 18,
-						minZoom: 13,
-						attribution: '{attribution.OpenMapSurfer} <a href="https://lpdaac.usgs.gov/products/aster_policies">ASTER GDEM</a>'
-					}
-				},
-				Hillshade: {
-					options: {
-						variant: 'asterh',
-						maxZoom: 18,
-						attribution: '{attribution.OpenMapSurfer} <a href="https://lpdaac.usgs.gov/products/aster_policies">ASTER GDEM</a>, <a href="http://srtm.csi.cgiar.org/">SRTM</a>'
-					}
-				},
-				ElementsAtRisk: {
-					options: {
-						variant: 'elements_at_risk',
-						attribution: '{attribution.OpenMapSurfer}{attribution.OpenStreetMap}'
-					}
-				}
+				maxZoom: 20,
+				attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: {attribution.OpenStreetMap}'
 			}
 		},
 		Hydda: {
-			url: '//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png',
+			url: 'https://{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png',
 			options: {
-				maxZoom: 18,
+				maxZoom: 20,
 				variant: 'full',
 				attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data {attribution.OpenStreetMap}'
 			},
@@ -4310,20 +4288,75 @@ function asArray(value) {
 				RoadsAndLabels: 'roads_and_labels'
 			}
 		},
-		MapBox: {
-			url: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}{r}.png?access_token={accessToken}',
+		Jawg: {
+			url: 'https://{s}.tile.jawg.io/{variant}/{z}/{x}/{y}{r}.png?access-token={accessToken}',
 			options: {
 				attribution:
-					'<a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox</a> ' +
+					'<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> ' +
+					'{attribution.OpenStreetMap}',
+				minZoom: 0,
+				maxZoom: 22,
+				subdomains: 'abcd',
+				variant: 'jawg-terrain',
+				// Get your own Jawg access token here : https://www.jawg.io/lab/
+				// NB : this is a demonstration key that comes with no guarantee
+				accessToken: '<insert your access token here>',
+			},
+			variants: {
+				Streets: 'jawg-streets',
+				Terrain: 'jawg-terrain',
+				Sunny: 'jawg-sunny',
+				Dark: 'jawg-dark',
+				Light: 'jawg-light',
+				Matrix: 'jawg-matrix'
+			}
+		},
+		MapBox: {
+			url: 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}{r}?access_token={accessToken}',
+			options: {
+				attribution:
+					'&copy; <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a> ' +
 					'{attribution.OpenStreetMap} ' +
 					'<a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a>',
-				subdomains: 'abcd',
-				id: 'mapbox.streets',
+				tileSize: 512,
+				maxZoom: 18,
+				zoomOffset: -1,
+				id: 'mapbox/streets-v11',
 				accessToken: '<insert your access token here>',
 			}
 		},
+		MapTiler: {
+			url: 'https://api.maptiler.com/maps/{variant}/{z}/{x}/{y}{r}.{ext}?key={key}',
+			options: {
+				attribution:
+					'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+				variant: 'streets',
+				ext: 'png',
+				key: '<insert your MapTiler Cloud API key here>',
+				tileSize: 512,
+				zoomOffset: -1,
+				minZoom: 0,
+				maxZoom: 21
+			},
+			variants: {
+				Streets: 'streets',
+				Basic: 'basic',
+				Bright: 'bright',
+				Pastel: 'pastel',
+				Positron: 'positron',
+				Hybrid: {
+					options: {
+						variant: 'hybrid',
+						ext: 'jpg'
+					}
+				},
+				Toner: 'toner',
+				Topo: 'topo',
+				Voyager: 'voyager'
+			}
+		},
 		Stamen: {
-			url: '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}',
+			url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}',
 			options: {
 				attribution:
 					'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ' +
@@ -4343,7 +4376,7 @@ function asArray(value) {
 				TonerLabels: 'toner-labels',
 				TonerLite: 'toner-lite',
 				Watercolor: {
-					url: '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}',
+					url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}',
 					options: {
 						variant: 'watercolor',
 						ext: 'jpg',
@@ -4373,7 +4406,7 @@ function asArray(value) {
 					}
 				},
 				TopOSMRelief: {
-					url: '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}',
+					url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}',
 					options: {
 						variant: 'toposm-color-relief',
 						ext: 'jpg',
@@ -4408,7 +4441,7 @@ function asArray(value) {
 			}
 		},
 		Esri: {
-			url: '//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}',
+			url: 'https://server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}',
 			options: {
 				variant: 'World_Street_Map',
 				attribution: 'Tiles &copy; Esri'
@@ -4496,7 +4529,7 @@ function asArray(value) {
 			options: {
 				maxZoom: 19,
 				attribution: 'Map data &copy; <a href="http://openweathermap.org">OpenWeatherMap</a>',
-				apiKey:'<insert your api key here>',
+				apiKey: '<insert your api key here>',
 				opacity: 0.5
 			},
 			variants: {
@@ -4516,7 +4549,7 @@ function asArray(value) {
 		HERE: {
 			/*
 			 * HERE maps, formerly Nokia maps.
-			 * These basemaps are free, but you need an API key. Please sign up at
+			 * These basemaps are free, but you need an api id and app key. Please sign up at
 			 * https://developer.here.com/plans
 			 */
 			url:
@@ -4632,12 +4665,120 @@ function asArray(value) {
 				}
 			}
 		},
+		HEREv3: {
+			/*
+			 * HERE maps API Version 3.
+			 * These basemaps are free, but you need an API key. Please sign up at
+			 * https://developer.here.com/plans
+			 * Version 3 deprecates the app_id and app_code access in favor of apiKey
+			 *
+			 * Supported access methods as of 2019/12/21:
+			 * @see https://developer.here.com/faqs#access-control-1--how-do-you-control-access-to-here-location-services
+			 */
+			url:
+				'https://{s}.{base}.maps.ls.hereapi.com/maptile/2.1/' +
+				'{type}/{mapID}/{variant}/{z}/{x}/{y}/{size}/{format}?' +
+				'apiKey={apiKey}&lg={language}',
+			options: {
+				attribution:
+					'Map &copy; 1987-' + new Date().getFullYear() + ' <a href="http://developer.here.com">HERE</a>',
+				subdomains: '1234',
+				mapID: 'newest',
+				apiKey: '<insert your apiKey here>',
+				base: 'base',
+				variant: 'normal.day',
+				maxZoom: 20,
+				type: 'maptile',
+				language: 'eng',
+				format: 'png8',
+				size: '256'
+			},
+			variants: {
+				normalDay: 'normal.day',
+				normalDayCustom: 'normal.day.custom',
+				normalDayGrey: 'normal.day.grey',
+				normalDayMobile: 'normal.day.mobile',
+				normalDayGreyMobile: 'normal.day.grey.mobile',
+				normalDayTransit: 'normal.day.transit',
+				normalDayTransitMobile: 'normal.day.transit.mobile',
+				normalNight: 'normal.night',
+				normalNightMobile: 'normal.night.mobile',
+				normalNightGrey: 'normal.night.grey',
+				normalNightGreyMobile: 'normal.night.grey.mobile',
+				normalNightTransit: 'normal.night.transit',
+				normalNightTransitMobile: 'normal.night.transit.mobile',
+				reducedDay: 'reduced.day',
+				reducedNight: 'reduced.night',
+				basicMap: {
+					options: {
+						type: 'basetile'
+					}
+				},
+				mapLabels: {
+					options: {
+						type: 'labeltile',
+						format: 'png'
+					}
+				},
+				trafficFlow: {
+					options: {
+						base: 'traffic',
+						type: 'flowtile'
+					}
+				},
+				carnavDayGrey: 'carnav.day.grey',
+				hybridDay: {
+					options: {
+						base: 'aerial',
+						variant: 'hybrid.day'
+					}
+				},
+				hybridDayMobile: {
+					options: {
+						base: 'aerial',
+						variant: 'hybrid.day.mobile'
+					}
+				},
+				hybridDayTransit: {
+					options: {
+						base: 'aerial',
+						variant: 'hybrid.day.transit'
+					}
+				},
+				hybridDayGrey: {
+					options: {
+						base: 'aerial',
+						variant: 'hybrid.grey.day'
+					}
+				},
+				pedestrianDay: 'pedestrian.day',
+				pedestrianNight: 'pedestrian.night',
+				satelliteDay: {
+					options: {
+						base: 'aerial',
+						variant: 'satellite.day'
+					}
+				},
+				terrainDay: {
+					options: {
+						base: 'aerial',
+						variant: 'terrain.day'
+					}
+				},
+				terrainDayMobile: {
+					options: {
+						base: 'aerial',
+						variant: 'terrain.day.mobile'
+					}
+				}
+			}
+		},
 		FreeMapSK: {
-			url: 'http://t{s}.freemap.sk/T/{z}/{x}/{y}.jpeg',
+			url: 'https://{s}.freemap.sk/T/{z}/{x}/{y}.jpeg',
 			options: {
 				minZoom: 8,
 				maxZoom: 16,
-				subdomains: '1234',
+				subdomains: 'abcd',
 				bounds: [[47.204642, 15.996093], [49.830896, 22.576904]],
 				attribution:
 					'{attribution.OpenStreetMap}, vizualization CC-By-SA 2.0 <a href="http://freemap.sk">Freemap.sk</a>'
@@ -4655,7 +4796,7 @@ function asArray(value) {
 			options: {
 				attribution: '{attribution.OpenStreetMap} &copy; <a href="https://carto.com/attributions">CARTO</a>',
 				subdomains: 'abcd',
-				maxZoom: 19,
+				maxZoom: 20,
 				variant: 'light_all'
 			},
 			variants: {
@@ -4689,11 +4830,12 @@ function asArray(value) {
 			}
 		},
 		BasemapAT: {
-			url: '//maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}',
+			url: 'https://maps{s}.wien.gv.at/basemap/{variant}/{type}/google3857/{z}/{y}/{x}.{format}',
 			options: {
 				maxZoom: 19,
 				attribution: 'Datenquelle: <a href="https://www.basemap.at">basemap.at</a>',
 				subdomains: ['', '1', '2', '3', '4'],
+				type: 'normal',
 				format: 'png',
 				bounds: [[46.358770, 8.782379], [49.037872, 17.189532]],
 				variant: 'geolandbasemap'
@@ -4707,6 +4849,20 @@ function asArray(value) {
 				},
 				grau: 'bmapgrau',
 				overlay: 'bmapoverlay',
+				terrain: {
+					options: {
+						variant: 'bmapgelaende',
+						type: 'grau',
+						format: 'jpeg'
+					}
+				},
+				surface: {
+					options: {
+						variant: 'bmapoberflaeche',
+						type: 'grau',
+						format: 'jpeg'
+					}
+				},
 				highdpi: {
 					options: {
 						variant: 'bmaphidpi',
@@ -4723,19 +4879,19 @@ function asArray(value) {
 			}
 		},
 		nlmaps: {
-			url: '//geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png',
+			url: 'https://geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png',
 			options: {
 				minZoom: 6,
 				maxZoom: 19,
 				bounds: [[50.5, 3.25], [54, 7.6]],
-				attribution: 'Kaartgegevens &copy; <a href="kadaster.nl">Kadaster</a>'
+				attribution: 'Kaartgegevens &copy; <a href="https://www.kadaster.nl">Kadaster</a>'
 			},
 			variants: {
 				'standaard': 'brtachtergrondkaart',
 				'pastel': 'brtachtergrondkaartpastel',
 				'grijs': 'brtachtergrondkaartgrijs',
 				'luchtfoto': {
-					'url': '//geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/1.0.0/2016_ortho25/EPSG:3857/{z}/{x}/{y}.png',
+					'url': 'https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0/Actueel_ortho25/EPSG:3857/{z}/{x}/{y}.jpeg',
 				}
 			}
 		},
@@ -4771,7 +4927,7 @@ function asArray(value) {
 				},
 				ModisTerraSnowCover: {
 					options: {
-						variant: 'MODIS_Terra_Snow_Cover',
+						variant: 'MODIS_Terra_NDSI_Snow_Cover',
 						format: 'png',
 						maxZoom: 8,
 						opacity: 0.75
@@ -4804,7 +4960,7 @@ function asArray(value) {
 			//   z0-9  - 1:1m
 			//  z10-11 - quarter inch (1:253440)
 			//  z12-18 - one inch (1:63360)
-			url: '//nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg',
+			url: 'https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg',
 			options: {
 				attribution: '<a href="http://geo.nls.uk/maps/">National Library of Scotland Historic Maps</a>',
 				bounds: [[49.6, -12], [61.7, 3]],
@@ -4817,7 +4973,7 @@ function asArray(value) {
 			// Justice Map (http://www.justicemap.org/)
 			// Visualize race and income data for your community, county and country.
 			// Includes tools for data journalists, bloggers and community activists.
-			url: 'http://www.justicemap.org/tile/{size}/{variant}/{z}/{x}/{y}.png',
+			url: 'https://www.justicemap.org/tile/{size}/{variant}/{z}/{x}/{y}.png',
 			options: {
 				attribution: '<a href="http://www.justicemap.org/terms.php">Justice Map</a>',
 				// one of 'county', 'tract', 'block'
@@ -4837,14 +4993,6 @@ function asArray(value) {
 				plurality: 'plural'
 			}
 		},
-		Wikimedia: {
-			url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png',
-			options: {
-				attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-				minZoom: 1,
-				maxZoom: 19
-			}
-		},
 		GeoportailFrance: {
 			url: 'https://wxs.ign.fr/{apikey}/geoportail/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE={style}&TILEMATRIXSET=PM&FORMAT={format}&LAYER={variant}&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}',
 			options: {
@@ -4855,31 +5003,30 @@ function asArray(value) {
 				// Get your own geoportail apikey here : http://professionnels.ign.fr/ign/contrats/
 				// NB : 'choisirgeoportail' is a demonstration key that comes with no guarantee
 				apikey: 'choisirgeoportail',
-				format: 'image/jpeg',
-				style : 'normal',
-				variant: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD'
+				format: 'image/png',
+				style: 'normal',
+				variant: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2'
 			},
 			variants: {
+				plan: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2',
 				parcels: {
-					options : {
-						variant: 'CADASTRALPARCELS.PARCELS',
-						maxZoom: 20,
-						style : 'bdparcellaire',
-						format: 'image/png'
+					options: {
+						variant: 'CADASTRALPARCELS.PARCELLAIRE_EXPRESS',
+						style: 'PCI vecteur',
+						maxZoom: 20
 					}
 				},
-				ignMaps: 'GEOGRAPHICALGRIDSYSTEMS.MAPS',
-				maps: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD',
 				orthos: {
 					options: {
 						maxZoom: 19,
+						format: 'image/jpeg',
 						variant: 'ORTHOIMAGERY.ORTHOPHOTOS'
 					}
 				}
 			}
 		},
 		OneMapSG: {
-			url: '//maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png',
+			url: 'https://maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png',
 			options: {
 				variant: 'Default',
 				minZoom: 11,
@@ -4894,6 +5041,104 @@ function asArray(value) {
 				Grey: 'Grey',
 				LandLot: 'LandLot'
 			}
+		},
+		USGS: {
+			url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}',
+			options: {
+				maxZoom: 20,
+				attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
+			},
+			variants: {
+				USTopo: {},
+				USImagery: {
+					url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}'
+				},
+				USImageryTopo: {
+					url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}'
+				}
+			}
+		},
+		WaymarkedTrails: {
+			url: 'https://tile.waymarkedtrails.org/{variant}/{z}/{x}/{y}.png',
+			options: {
+				maxZoom: 18,
+				attribution: 'Map data: {attribution.OpenStreetMap} | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+			},
+			variants: {
+				hiking: 'hiking',
+				cycling: 'cycling',
+				mtb: 'mtb',
+				slopes: 'slopes',
+				riding: 'riding',
+				skating: 'skating'
+			}
+		},
+		OpenAIP: {
+			url: 'https://{s}.tile.maps.openaip.net/geowebcache/service/tms/1.0.0/openaip_basemap@EPSG%3A900913@png/{z}/{x}/{y}.{ext}',
+			options: {
+				attribution: '<a href="https://www.openaip.net/">openAIP Data</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-NC-SA</a>)',
+				ext: 'png',
+				minZoom: 4,
+				maxZoom: 14,
+				tms: true,
+				detectRetina: true,
+				subdomains: '12'
+			}
+		},
+		OpenSnowMap: {
+			url: 'https://tiles.opensnowmap.org/{variant}/{z}/{x}/{y}.png',
+			options: {
+				minZoom: 9,
+				maxZoom: 18,
+				attribution: 'Map data: {attribution.OpenStreetMap} & ODbL, &copy; <a href="https://www.opensnowmap.org/iframes/data.html">www.opensnowmap.org</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+			},
+			variants: {
+				pistes: 'pistes',
+			}
+		},
+		AzureMaps: {
+			url: 
+				'https://atlas.microsoft.com/map/tile?api-version={apiVersion}'+
+				'&tilesetId={variant}&x={x}&y={y}&zoom={z}&language={language}'+
+				'&subscription-key={subscriptionKey}',
+			options: {
+				attribution: 'See https://docs.microsoft.com/en-US/rest/api/maps/renderv2/getmaptilepreview for details.',
+				apiVersion: '2.0',
+				variant: 'microsoft.imagery',
+				subscriptionKey: '<insert your subscription key here>',
+				language: 'en-US',
+			},
+			variants: {
+				MicrosoftImagery: 'microsoft.imagery',
+				MicrosoftBaseDarkGrey: 'microsoft.base.darkgrey',
+				MicrosoftBaseRoad: 'microsoft.base.road',
+				MicrosoftBaseHybridRoad: 'microsoft.base.hybrid.road',
+				MicrosoftTerraMain: 'microsoft.terra.main',
+				MicrosoftWeatherInfraredMain: {
+					url: 
+					'https://atlas.microsoft.com/map/tile?api-version={apiVersion}'+
+					'&tilesetId={variant}&x={x}&y={y}&zoom={z}'+
+					'&timeStamp={timeStamp}&language={language}' +
+					'&subscription-key={subscriptionKey}',
+					options: {
+						timeStamp: '2021-05-08T09:03:00Z',
+						attribution: 'See https://docs.microsoft.com/en-US/rest/api/maps/renderv2/getmaptilepreview#uri-parameters for details.',
+						variant: 'microsoft.weather.infrared.main',
+					},
+				},
+				MicrosoftWeatherRadarMain: {
+					url: 
+					'https://atlas.microsoft.com/map/tile?api-version={apiVersion}'+
+					'&tilesetId={variant}&x={x}&y={y}&zoom={z}'+
+					'&timeStamp={timeStamp}&language={language}' +
+					'&subscription-key={subscriptionKey}',
+					options: {
+						timeStamp: '2021-05-08T09:03:00Z',
+						attribution: 'See https://docs.microsoft.com/en-US/rest/api/maps/renderv2/getmaptilepreview#uri-parameters for details.',
+						variant: 'microsoft.weather.radar.main',
+					},
+				}
+			},
 		}
 	};
 
@@ -4911,9 +5156,9 @@ function asArray(value) {
 </head>
 <body style="background-color: white;">
 <div id="htmlwidget_container">
-  <div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a84a39f36e5c14ba2a90" style="width:100%;height:400px;"></div>
+  <div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-01160455a3d7221bbf7b" style="width:100%;height:400px;"></div>
 </div>
-<script type="application/json" data-for="htmlwidget-a84a39f36e5c14ba2a90">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false,"hoverToWake":false},"calls":[{"method":"createMapPane","args":["polygons",410]},{"method":"createMapPane","args":["maplabels",420]},{"method":"addProviderTiles","args":["CartoDB.PositronNoLabels",null,null,{"minZoom":2,"maxZoom":10,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false,"dragging":false}]},{"method":"addProviderTiles","args":["CartoDB.PositronOnlyLabels",null,"map labels",{"minZoom":4,"maxZoom":10,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"pane":"maplabels","zoomControl":false,"dragging":false}]},{"method":"addCircleMarkers","args":[[40.800999,40.598,40.727001,38.723,39.196999,40.717999,40.612103,39.540001,40.18,39.882999,39.882999,39.393002,39.238998,38.682999,38.863998,38.983002,38.824001,38.650002,39.083,38.513,39.807999,38.152,38.224998,38.25,38.328999,38.202999,37.875,37.948101,37.702,37.950001,37.966999,37.584999,37.213001,37.200001,37.000999,36.993999,37.033001,36.833,36.415001,36.061001,35.646,39.471001,39.452,39.322777,34.583,34.644154,34.515202,33.858002],[-122.762001,-122.537003,-122.792999,-123.010002,-123.185997,-122.419998,-122.445702,-121.492996,-120.607002,-120.182999,-120.467003,-121.139999,-121.266998,-121.182999,-120.438004,-120.322998,-120.359001,-121.182999,-122.532997,-122.103996,-122.329002,-120.811996,-121.021004,-120.849998,-119.959999,-120.074997,-120.602997,-120.525002,-120.420998,-119.782997,-119.917,-120.269997,-119.970001,-119.917,-119.705002,-120.93,-121.133003,-119.324997,-119.001999,-118.921997,-118.473,-120.102997,-120.290001,-120.264397,-119.980003,-118.764526,-118.6101,-117.182999],7,null,null,{"interactive":true,"className":"","stroke":false,"color":["#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#40E0D0","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#40E0D0","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF"],"fillOpacity":0.5},null,null,null,null,["<font size='3'><b><p style='color:#0059F6'>Trinity Lake <br> Trinity County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,447,650 acre-feet<\/b><br> Storage: <b>1,386,496 acre-feet<\/b> <br> Percent of Capacity: <b>57%<\/b>","<font size='3'><b><p style='color:#0059F6'>Whiskeytown <br> Shasta County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>241,100 acre-feet<\/b><br> Storage: <b>238,247 acre-feet<\/b> <br> Percent of Capacity: <b>99%<\/b>","<font size='3'><b><p style='color:#0059F6'>Lewiston <br> Trinity County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>14,660 acre-feet<\/b><br> Storage: <b>13,815 acre-feet<\/b> <br> Percent of Capacity: <b>94%<\/b>","<font size='3'><b><p style='color:#0059F6'>Sonoma(Warm Springs) <br> Sonoma County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>381,000 acre-feet<\/b><br> Storage: <b>244,383 acre-feet<\/b> <br> Percent of Capacity: <b>64%<\/b>","<font size='3'><b><p style='color:#0059F6'>Mendocino (Coyote) <br> Mendocino County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>122,400 acre-feet<\/b><br> Storage: <b>89,014 acre-feet<\/b> <br> Percent of Capacity: <b>73%<\/b>","<font size='3'><b><p style='color:#0059F6'>Shasta <br> Shasta County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>4,552,000 acre-feet<\/b><br> Storage: <b>3,758,984 acre-feet<\/b> <br> Percent of Capacity: <b>83%<\/b>","<font size='3'><b><p style='color:#0059F6'>Keswick <br> Shasta County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>23,772 acre-feet<\/b><br> Storage: <b>22,702 acre-feet<\/b> <br> Percent of Capacity: <b>95%<\/b>","<font size='3'><b><p style='color:#0059F6'>Oroville <br> Butte County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>3,537,577 acre-feet<\/b><br> Storage: <b>3,093,212 acre-feet<\/b> <br> Percent of Capacity: <b>87%<\/b>","<font size='3'><b><p style='color:#0059F6'>Antelope <br> Plumas County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>22,566 acre-feet<\/b><br> Storage: <b>21,134 acre-feet<\/b> <br> Percent of Capacity: <b>94%<\/b>","<font size='3'><b><p style='color:#0059F6'>Frenchman <br> Plumas County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>55,477 acre-feet<\/b><br> Storage: <b>50,685 acre-feet<\/b> <br> Percent of Capacity: <b>91%<\/b>","<font size='3'><b><p style='color:#0059F6'>Lake Davis <br> Plumas County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>83,000 acre-feet<\/b><br> Storage: <b>74,594 acre-feet<\/b> <br> Percent of Capacity: <b>90%<\/b>","<font size='3'><b><p style='color:#0059F6'>Bullards Bar <br> Yuba County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>966,000 acre-feet<\/b><br> Storage: <b>798,609 acre-feet<\/b> <br> Percent of Capacity: <b>83%<\/b>","<font size='3'><b><p style='color:#0059F6'>Englebright <br> Nevada County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>70,000 acre-feet<\/b><br> Storage: <b>65,379 acre-feet<\/b> <br> Percent of Capacity: <b>93%<\/b>","<font size='3'><b><p style='color:#0059F6'>Folsom <br> Sacramento County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>977,000 acre-feet<\/b><br> Storage: <b>812,005 acre-feet<\/b> <br> Percent of Capacity: <b>83%<\/b>","<font size='3'><b><p style='color:#0059F6'>Union Valley <br> El Dorado County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>266,369 acre-feet<\/b><br> Storage: <b>226,113 acre-feet<\/b> <br> Percent of Capacity: <b>85%<\/b>","<font size='3'><b><p style='color:#0059F6'>Loon Lake <br> El Dorado County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>69,306 acre-feet<\/b><br> Storage: <b>58,398 acre-feet<\/b> <br> Percent of Capacity: <b>84%<\/b>","<font size='3'><b><p style='color:#0059F6'>Ice House <br> El Dorado County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>43,496 acre-feet<\/b><br> Storage: <b>38,485 acre-feet<\/b> <br> Percent of Capacity: <b>88%<\/b>","<font size='3'><b><p style='color:#0059F6'>Nimbus <br> Sacramento County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>9,000 acre-feet<\/b><br> Storage: <b>8,326 acre-feet<\/b> <br> Percent of Capacity: <b>93%<\/b>","<font size='3'><b><p style='color:#0059F6'>Indian Valley <br> Lake County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>300,000 acre-feet<\/b><br> Storage: <b>165,210 acre-feet<\/b> <br> Percent of Capacity: <b>55%<\/b>","<font size='3'><b><p style='color:#0059F6'>Berryessa <br> Napa County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>1,602,000 acre-feet<\/b><br> Storage: <b>1,294,755 acre-feet<\/b> <br> Percent of Capacity: <b>81%<\/b>","<font size='3'><b><p style='color:#0059F6'>Black Butte <br> Tehama County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>143,700 acre-feet<\/b><br> Storage: <b>84,681 acre-feet<\/b> <br> Percent of Capacity: <b>59%<\/b>","<font size='3'><b><p style='color:#0059F6'>New Hogan <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>317,000 acre-feet<\/b><br> Storage: <b>210,251 acre-feet<\/b> <br> Percent of Capacity: <b>66%<\/b>","<font size='3'><b><p style='color:#0059F6'>Camanche <br> San Joaquin County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>417,120 acre-feet<\/b><br> Storage: <b>367,780 acre-feet<\/b> <br> Percent of Capacity: <b>88%<\/b>","<font size='3'><b><p style='color:#0059F6'>Pardee <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>203,795 acre-feet<\/b><br> Storage: <b>200,676 acre-feet<\/b> <br> Percent of Capacity: <b>98%<\/b>","<font size='3'><b><p style='color:#0059F6'>Donnell's <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>64,320 acre-feet<\/b><br> Storage: <b>61,996 acre-feet<\/b> <br> Percent of Capacity: <b>96%<\/b>","<font size='3'><b><p style='color:#0059F6'>Beardsley <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>97,800 acre-feet<\/b><br> Storage: <b>89,360 acre-feet<\/b> <br> Percent of Capacity: <b>91%<\/b>","<font size='3'><b><p style='color:#0059F6'>Tulloch <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>67,000 acre-feet<\/b><br> Storage: <b>65,363 acre-feet<\/b> <br> Percent of Capacity: <b>98%<\/b>","<font size='3'><b><p style='color:#0059F6'>New Melones <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,400,000 acre-feet<\/b><br> Storage: <b>1,993,826 acre-feet<\/b> <br> Percent of Capacity: <b>83%<\/b>","<font size='3'><b><p style='color:#0059F6'>Don Pedro <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,030,000 acre-feet<\/b><br> Storage: <b>1,915,095 acre-feet<\/b> <br> Percent of Capacity: <b>94%<\/b>","<font size='3'><b><p style='color:#0059F6'>Hetch Hetchy <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>360,000 acre-feet<\/b><br> Storage: <b>360,360 acre-feet<\/b> <br> Percent of Capacity: <b>100%<\/b>","<font size='3'><b><p style='color:#0059F6'>Cherry Valley <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>273,500 acre-feet<\/b><br> Storage: <b>265,471 acre-feet<\/b> <br> Percent of Capacity: <b>97%<\/b>","<font size='3'><b><p style='color:#0059F6'>Mc Clure (Exchequer) <br> Mariposa County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>1,024,600 acre-feet<\/b><br> Storage: <b>900,132 acre-feet<\/b> <br> Percent of Capacity: <b>88%<\/b>","<font size='3'><b><p style='color:#0059F6'>Eastman (Buchanan) <br> Madera County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>150,000 acre-feet<\/b><br> Storage: <b>96,159 acre-feet<\/b> <br> Percent of Capacity: <b>64%<\/b>","<font size='3'><b><p style='color:#0059F6'>Hensley (Hidden) <br> Madera County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>90,000 acre-feet<\/b><br> Storage: <b>42,886 acre-feet<\/b> <br> Percent of Capacity: <b>48%<\/b>","<font size='3'><b><p style='color:#0059F6'>Millerton (Friant) <br> Fresno County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>520,500 acre-feet<\/b><br> Storage: <b>447,962 acre-feet<\/b> <br> Percent of Capacity: <b>86%<\/b>","<font size='3'><b><p style='color:#0059F6'>Los Banos <br> Merced County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>34,600 acre-feet<\/b><br> Storage: <b>22,279 acre-feet<\/b> <br> Percent of Capacity: <b>64%<\/b>","<font size='3'><b><p style='color:#0059F6'>San Luis <br> Merced County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,041,000 acre-feet<\/b><br> Storage: <b>1,805,967 acre-feet<\/b> <br> Percent of Capacity: <b>88%<\/b>","<font size='3'><b><p style='color:#0059F6'>Pine Flat <br> Fresno County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>1,000,000 acre-feet<\/b><br> Storage: <b>907,559 acre-feet<\/b> <br> Percent of Capacity: <b>91%<\/b>","<font size='3'><b><p style='color:#0059F6'>Kaweah (Terminus) <br> Tulare County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>185,600 acre-feet<\/b><br> Storage: <b>130,893 acre-feet<\/b> <br> Percent of Capacity: <b>71%<\/b>","<font size='3'><b><p style='color:#0059F6'>Success <br> Tulare County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>82,300 acre-feet<\/b><br> Storage: <b>63,741 acre-feet<\/b> <br> Percent of Capacity: <b>77%<\/b>","<font size='3'><b><p style='color:#0059F6'>Isabella <br> Kern County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>568,000 acre-feet<\/b><br> Storage: <b>510,879 acre-feet<\/b> <br> Percent of Capacity: <b>90%<\/b>","<font size='3'><b><p style='color:#0059F6'>Stampede <br> Sierra County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>226,500 acre-feet<\/b><br> Storage: <b>224,949 acre-feet<\/b> <br> Percent of Capacity: <b>99%<\/b>","<font size='3'><b><p style='color:#0059F6'>Independence Lake <br> Sierra County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>17,295 acre-feet<\/b><br> Storage: <b>17,540 acre-feet<\/b> <br> Percent of Capacity: <b>101%<\/b>","<font size='3'><b><p style='color:#0059F6'>Donner Lake <br> Nevada County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>9,700 acre-feet<\/b><br> Storage: <b>9,337 acre-feet<\/b> <br> Percent of Capacity: <b>96%<\/b>","<font size='3'><b><p style='color:#0059F6'>Cachuma Lake <br> Santa Barbara County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>193,305 acre-feet<\/b><br> Storage: <b>187,392 acre-feet<\/b> <br> Percent of Capacity: <b>97%<\/b>","<font size='3'><b><p style='color:#0059F6'>Pyramid <br> Los Angeles County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>180,000 acre-feet<\/b><br> Storage: <b>163,451 acre-feet<\/b> <br> Percent of Capacity: <b>91%<\/b>","<font size='3'><b><p style='color:#0059F6'>Castaic <br> Los Angeles County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>325,000 acre-feet<\/b><br> Storage: <b>302,336 acre-feet<\/b> <br> Percent of Capacity: <b>93%<\/b>","<font size='3'><b><p style='color:#0059F6'>Lake Perris <br> Riverside County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>131,452 acre-feet<\/b><br> Storage: <b>91,531 acre-feet<\/b> <br> Percent of Capacity: <b>70%<\/b>"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#40E0D0","#0096FF","#3F00FF","gray"],"labels":["Under 50%","50% - 100%","Over 100%","No data"],"na_color":null,"na_label":"NA","opacity":1,"position":"bottomleft","type":"unknown","title":"Percent of Capacity","extra":null,"layerId":null,"className":"info legend","group":null}]},{"method":"addControl","args":["<div>\n  <style>\n  .leaflet-control.map-footer {\n    position: fixed !important;\n    right: 0%;\n    bottom: 6px;\n    text-align: right;\n    padding: 10px;\n    background: rgba(255,255,255,0.75);\n    font-style: italic;\n    font-size: 10px;\n  }\n  @media only screen and (max-width: 460px) {\n    .leaflet-control.map-footer {\n      font-size: 8px;\n    }\n  }\n<\/style>\n  <div> Source: California Department of Water Resources. <\/div> <div>Last updated Friday, Aug. 11, 2023\n<\/div>","bottomright",null,"map-footer"]},{"method":"addControl","args":["<div>\n  <style>\n  .leaflet-control.map-title {\n    position: fixed !important;\n    left: 5px;\n    top: 5px;\n    width: 30%;\n    text-align: left;\n    padding: 10px;\n    color: white;\n  }\n  @media only screen and (max-width: 460px) {\n    .leaflet-control.map-title {\n      font-size: 15px;\n    }\n  }\n<\/style>\n  <div style=\"font-weight: bold; font-size: 20px; padding: 10px; background:#0059F6;\">Reservoir Tracker<\/div>\n<\/div>","topleft",null,"map-title"]}],"setView":[[37.8427456,-122.1484334],5.5,[]],"limits":{"lat":[33.858002,40.800999],"lng":[-123.185997,-117.182999]}},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (function(el, x) {\n        L.control.zoom({ position: 'topright' }).addTo(this)\n    }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
-<script type="application/htmlwidget-sizing" data-for="htmlwidget-a84a39f36e5c14ba2a90">{"viewer":{"width":"100%","height":400,"padding":0,"fill":true},"browser":{"width":"100%","height":400,"padding":0,"fill":true}}</script>
+<script type="application/json" data-for="htmlwidget-01160455a3d7221bbf7b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false,"hoverToWake":false},"calls":[{"method":"createMapPane","args":["polygons",410]},{"method":"createMapPane","args":["maplabels",420]},{"method":"addProviderTiles","args":["CartoDB.PositronNoLabels",null,null,{"minZoom":2,"maxZoom":10,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false,"dragging":false}]},{"method":"addProviderTiles","args":["CartoDB.PositronOnlyLabels",null,"map labels",{"minZoom":4,"maxZoom":10,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"pane":"maplabels","zoomControl":false,"dragging":false}]},{"method":"addCircleMarkers","args":[[40.800999,40.598,40.727001,38.723,39.196999,40.717999,40.612103,39.540001,40.18,39.882999,39.882999,39.393002,39.238998,38.682999,38.863998,38.983002,38.824001,38.650002,39.083,38.513,39.807999,38.152,38.224998,38.25,38.328999,38.202999,37.875,37.948101,37.702,37.950001,37.966999,37.584999,37.213001,37.200001,37.000999,36.993999,37.033001,36.833,36.415001,36.061001,35.646,39.471001,39.452,39.322777,34.583,34.644154,34.515202,33.858002],[-122.762001,-122.537003,-122.792999,-123.010002,-123.185997,-122.419998,-122.445702,-121.492996,-120.607002,-120.182999,-120.467003,-121.139999,-121.266998,-121.182999,-120.438004,-120.322998,-120.359001,-121.182999,-122.532997,-122.103996,-122.329002,-120.811996,-121.021004,-120.849998,-119.959999,-120.074997,-120.602997,-120.525002,-120.420998,-119.782997,-119.917,-120.269997,-119.970001,-119.917,-119.705002,-120.93,-121.133003,-119.324997,-119.001999,-118.921997,-118.473,-120.102997,-120.290001,-120.264397,-119.980003,-118.764526,-118.6101,-117.182999],7,null,null,{"interactive":true,"className":"","stroke":false,"color":["#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","gray","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#40E0D0","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","gray","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#40E0D0","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF","#3F00FF","#0096FF","#0096FF","#0096FF","#0096FF","#0096FF"],"fillOpacity":0.5},null,null,null,null,["<font size='3'><b><p style='color:#0059F6'>Trinity Lake <br> Trinity County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,447,650 acre-feet<\/b><br> Storage: <b>1,384,673 acre-feet<\/b> <br> Percent of Capacity: <b>57%<\/b>","<font size='3'><b><p style='color:#0059F6'>Whiskeytown <br> Shasta County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>241,100 acre-feet<\/b><br> Storage: <b>238,311 acre-feet<\/b> <br> Percent of Capacity: <b>99%<\/b>","<font size='3'><b><p style='color:#0059F6'>Lewiston <br> Trinity County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>14,660 acre-feet<\/b><br> Storage: <b>13,941 acre-feet<\/b> <br> Percent of Capacity: <b>95%<\/b>","<font size='3'><b><p style='color:#0059F6'>Sonoma(Warm Springs) <br> Sonoma County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>381,000 acre-feet<\/b><br> Storage: <b>244,119 acre-feet<\/b> <br> Percent of Capacity: <b>64%<\/b>","<font size='3'><b><p style='color:#0059F6'>Mendocino (Coyote) <br> Mendocino County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>122,400 acre-feet<\/b><br> Storage: <b>88,733 acre-feet<\/b> <br> Percent of Capacity: <b>72%<\/b>","<font size='3'><b><p style='color:#0059F6'>Shasta <br> Shasta County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>4,552,000 acre-feet<\/b><br> Storage: <b>3,747,387 acre-feet<\/b> <br> Percent of Capacity: <b>82%<\/b>","<font size='3'><b><p style='color:#0059F6'>Keswick <br> Shasta County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>23,772 acre-feet<\/b><br> Storage: <b>23,116 acre-feet<\/b> <br> Percent of Capacity: <b>97%<\/b>","<font size='3'><b><p style='color:#0059F6'>Oroville <br> Butte County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>3,537,577 acre-feet<\/b><br> Storage: <b>3,083,745 acre-feet<\/b> <br> Percent of Capacity: <b>87%<\/b>","<font size='3'><b><p style='color:#0059F6'>Antelope <br> Plumas County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>22,566 acre-feet<\/b><br> Storage: <b>21,107 acre-feet<\/b> <br> Percent of Capacity: <b>94%<\/b>","<font size='3'><b><p style='color:#0059F6'>Frenchman <br> Plumas County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>55,477 acre-feet<\/b><br> Storage: <b>50,535 acre-feet<\/b> <br> Percent of Capacity: <b>91%<\/b>","<font size='3'><b><p style='color:#0059F6'>Lake Davis <br> Plumas County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>83,000 acre-feet<\/b><br> Storage: <b>74,480 acre-feet<\/b> <br> Percent of Capacity: <b>90%<\/b>","<font size='3'><b><p style='color:#0059F6'>Bullards Bar <br> Yuba County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>966,000 acre-feet<\/b><br> Storage: <b>795,378 acre-feet<\/b> <br> Percent of Capacity: <b>82%<\/b>","<font size='3'><b><p style='color:#0059F6'>Englebright <br> Nevada County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>70,000 acre-feet<\/b><br> Storage: <b>64,135 acre-feet<\/b> <br> Percent of Capacity: <b>92%<\/b>","<font size='3'><b><p style='color:#0059F6'>Folsom <br> Sacramento County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>977,000 acre-feet<\/b><br> Storage: <b>807,589 acre-feet<\/b> <br> Percent of Capacity: <b>83%<\/b>","<font size='3'><b><p style='color:#0059F6'>Union Valley <br> El Dorado County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>266,369 acre-feet<\/b><br> Storage: <b>224,787 acre-feet<\/b> <br> Percent of Capacity: <b>84%<\/b>","<font size='3'><b><p style='color:#0059F6'>Loon Lake <br> El Dorado County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>69,306 acre-feet<\/b><br> Storage: <b>58,257 acre-feet<\/b> <br> Percent of Capacity: <b>84%<\/b>","<font size='3'><b><p style='color:#0059F6'>Ice House <br> El Dorado County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>43,496 acre-feet<\/b><br> Storage: <b>38,377 acre-feet<\/b> <br> Percent of Capacity: <b>88%<\/b>","<font size='3'><b><p style='color:#0059F6'>Nimbus <br> Sacramento County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>9,000 acre-feet<\/b><br> Storage: <b>8,436 acre-feet<\/b> <br> Percent of Capacity: <b>94%<\/b>","<font size='3'><b><p style='color:#0059F6'>Indian Valley <br> Lake County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>300,000 acre-feet<\/b><br> Storage: <b>NA acre-feet<\/b> <br> Percent of Capacity: <b>NA%<\/b>","<font size='3'><b><p style='color:#0059F6'>Berryessa <br> Napa County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>1,602,000 acre-feet<\/b><br> Storage: <b>1,293,180 acre-feet<\/b> <br> Percent of Capacity: <b>81%<\/b>","<font size='3'><b><p style='color:#0059F6'>Black Butte <br> Tehama County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>143,700 acre-feet<\/b><br> Storage: <b>83,619 acre-feet<\/b> <br> Percent of Capacity: <b>58%<\/b>","<font size='3'><b><p style='color:#0059F6'>New Hogan <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>317,000 acre-feet<\/b><br> Storage: <b>209,848 acre-feet<\/b> <br> Percent of Capacity: <b>66%<\/b>","<font size='3'><b><p style='color:#0059F6'>Camanche <br> San Joaquin County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>417,120 acre-feet<\/b><br> Storage: <b>368,064 acre-feet<\/b> <br> Percent of Capacity: <b>88%<\/b>","<font size='3'><b><p style='color:#0059F6'>Pardee <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>203,795 acre-feet<\/b><br> Storage: <b>200,610 acre-feet<\/b> <br> Percent of Capacity: <b>98%<\/b>","<font size='3'><b><p style='color:#0059F6'>Donnell's <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>64,320 acre-feet<\/b><br> Storage: <b>61,805 acre-feet<\/b> <br> Percent of Capacity: <b>96%<\/b>","<font size='3'><b><p style='color:#0059F6'>Beardsley <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>97,800 acre-feet<\/b><br> Storage: <b>88,937 acre-feet<\/b> <br> Percent of Capacity: <b>91%<\/b>","<font size='3'><b><p style='color:#0059F6'>Tulloch <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>67,000 acre-feet<\/b><br> Storage: <b>65,474 acre-feet<\/b> <br> Percent of Capacity: <b>98%<\/b>","<font size='3'><b><p style='color:#0059F6'>New Melones <br> Calaveras County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,400,000 acre-feet<\/b><br> Storage: <b>1,989,963 acre-feet<\/b> <br> Percent of Capacity: <b>83%<\/b>","<font size='3'><b><p style='color:#0059F6'>Don Pedro <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,030,000 acre-feet<\/b><br> Storage: <b>1,907,920 acre-feet<\/b> <br> Percent of Capacity: <b>94%<\/b>","<font size='3'><b><p style='color:#0059F6'>Hetch Hetchy <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>360,000 acre-feet<\/b><br> Storage: <b>360,558 acre-feet<\/b> <br> Percent of Capacity: <b>100%<\/b>","<font size='3'><b><p style='color:#0059F6'>Cherry Valley <br> Tuolumne County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>273,500 acre-feet<\/b><br> Storage: <b>265,119 acre-feet<\/b> <br> Percent of Capacity: <b>97%<\/b>","<font size='3'><b><p style='color:#0059F6'>Mc Clure (Exchequer) <br> Mariposa County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>1,024,600 acre-feet<\/b><br> Storage: <b>895,754 acre-feet<\/b> <br> Percent of Capacity: <b>87%<\/b>","<font size='3'><b><p style='color:#0059F6'>Eastman (Buchanan) <br> Madera County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>150,000 acre-feet<\/b><br> Storage: <b>95,960 acre-feet<\/b> <br> Percent of Capacity: <b>64%<\/b>","<font size='3'><b><p style='color:#0059F6'>Hensley (Hidden) <br> Madera County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>90,000 acre-feet<\/b><br> Storage: <b>42,405 acre-feet<\/b> <br> Percent of Capacity: <b>47%<\/b>","<font size='3'><b><p style='color:#0059F6'>Millerton (Friant) <br> Fresno County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>520,500 acre-feet<\/b><br> Storage: <b>440,617 acre-feet<\/b> <br> Percent of Capacity: <b>85%<\/b>","<font size='3'><b><p style='color:#0059F6'>Los Banos <br> Merced County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>34,600 acre-feet<\/b><br> Storage: <b>22,259 acre-feet<\/b> <br> Percent of Capacity: <b>64%<\/b>","<font size='3'><b><p style='color:#0059F6'>San Luis <br> Merced County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>2,041,000 acre-feet<\/b><br> Storage: <b>1,801,331 acre-feet<\/b> <br> Percent of Capacity: <b>88%<\/b>","<font size='3'><b><p style='color:#0059F6'>Pine Flat <br> Fresno County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>1,000,000 acre-feet<\/b><br> Storage: <b>901,168 acre-feet<\/b> <br> Percent of Capacity: <b>90%<\/b>","<font size='3'><b><p style='color:#0059F6'>Kaweah (Terminus) <br> Tulare County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>185,600 acre-feet<\/b><br> Storage: <b>127,963 acre-feet<\/b> <br> Percent of Capacity: <b>69%<\/b>","<font size='3'><b><p style='color:#0059F6'>Success <br> Tulare County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>82,300 acre-feet<\/b><br> Storage: <b>62,803 acre-feet<\/b> <br> Percent of Capacity: <b>76%<\/b>","<font size='3'><b><p style='color:#0059F6'>Isabella <br> Kern County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>568,000 acre-feet<\/b><br> Storage: <b>507,509 acre-feet<\/b> <br> Percent of Capacity: <b>89%<\/b>","<font size='3'><b><p style='color:#0059F6'>Stampede <br> Sierra County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>226,500 acre-feet<\/b><br> Storage: <b>224,709 acre-feet<\/b> <br> Percent of Capacity: <b>99%<\/b>","<font size='3'><b><p style='color:#0059F6'>Independence Lake <br> Sierra County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>17,295 acre-feet<\/b><br> Storage: <b>17,533 acre-feet<\/b> <br> Percent of Capacity: <b>101%<\/b>","<font size='3'><b><p style='color:#0059F6'>Donner Lake <br> Nevada County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>9,700 acre-feet<\/b><br> Storage: <b>9,329 acre-feet<\/b> <br> Percent of Capacity: <b>96%<\/b>","<font size='3'><b><p style='color:#0059F6'>Cachuma Lake <br> Santa Barbara County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>193,305 acre-feet<\/b><br> Storage: <b>187,301 acre-feet<\/b> <br> Percent of Capacity: <b>97%<\/b>","<font size='3'><b><p style='color:#0059F6'>Pyramid <br> Los Angeles County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>180,000 acre-feet<\/b><br> Storage: <b>163,023 acre-feet<\/b> <br> Percent of Capacity: <b>91%<\/b>","<font size='3'><b><p style='color:#0059F6'>Castaic <br> Los Angeles County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>325,000 acre-feet<\/b><br> Storage: <b>302,400 acre-feet<\/b> <br> Percent of Capacity: <b>93%<\/b>","<font size='3'><b><p style='color:#0059F6'>Lake Perris <br> Riverside County <\/b><br> <font size='2'> <p style='color:black'> Capacity: <b>131,452 acre-feet<\/b><br> Storage: <b>91,205 acre-feet<\/b> <br> Percent of Capacity: <b>69%<\/b>"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#40E0D0","#0096FF","#3F00FF","gray"],"labels":["Under 50%","50% - 100%","Over 100%","No data"],"na_color":null,"na_label":"NA","opacity":1,"position":"bottomleft","type":"unknown","title":"Percent of Capacity","extra":null,"layerId":null,"className":"info legend","group":null}]},{"method":"addControl","args":["<div>\n  <style>\n  .leaflet-control.map-footer {\n    position: fixed !important;\n    right: 0%;\n    bottom: 6px;\n    text-align: right;\n    padding: 10px;\n    background: rgba(255,255,255,0.75);\n    font-style: italic;\n    font-size: 10px;\n  }\n  @media only screen and (max-width: 460px) {\n    .leaflet-control.map-footer {\n      font-size: 8px;\n    }\n  }\n<\/style>\n  <div> Source: California Department of Water Resources. <\/div> <div>Last updated Saturday, Aug. 12, 2023\n<\/div>","bottomright",null,"map-footer"]},{"method":"addControl","args":["<div>\n  <style>\n  .leaflet-control.map-title {\n    position: fixed !important;\n    left: 5px;\n    top: 5px;\n    width: 30%;\n    text-align: left;\n    padding: 10px;\n    color: white;\n  }\n  @media only screen and (max-width: 460px) {\n    .leaflet-control.map-title {\n      font-size: 15px;\n    }\n  }\n<\/style>\n  <div style=\"font-weight: bold; font-size: 20px; padding: 10px; background:#0059F6;\">Reservoir Tracker<\/div>\n<\/div>","topleft",null,"map-title"]}],"setView":[[37.8427456,-122.1484334],5.5,[]],"limits":{"lat":[33.858002,40.800999],"lng":[-123.185997,-117.182999]}},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (function(el, x) {\n        L.control.zoom({ position: 'topright' }).addTo(this)\n    }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+<script type="application/htmlwidget-sizing" data-for="htmlwidget-01160455a3d7221bbf7b">{"viewer":{"width":"100%","height":400,"padding":0,"fill":true},"browser":{"width":"100%","height":400,"padding":0,"fill":true}}</script>
 </body>
 </html>
