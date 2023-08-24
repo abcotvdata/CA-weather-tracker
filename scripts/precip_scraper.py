@@ -18,10 +18,6 @@ from selenium.webdriver.chrome.service import Service
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
-service = Service()
-options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(service=service, options=options)
-
 chrome_options = Options()
 options = [
     "--headless",
