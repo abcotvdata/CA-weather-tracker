@@ -100,7 +100,7 @@ getColor <- function(table_complete1) {
 }
 
 popups <- paste(sep = "",
-                paste(sep = "","<font size='3'><b><p style='color:#0059F6'>", table_complete$`Reservoir Name`, " <br> ", table_complete1$`COUNTY`, " County </b><br> <font size='2'> <p style='color:black'> Capacity: <b>", table_complete1$`Capacity(AF)`," acre-feet</b>","<br> Storage: <b>", table_complete1$`Storage(AF)`, " acre-feet</b> <br> Percent of Capacity: <b>", table_complete1$`% of Capacity`,"%</b>")) %>% 
+                paste(sep = "","<font size='3'><b><p style='color:#0059F6'>", table_complete1$`Reservoir Name`, " <br> ", table_complete1$`COUNTY`, " County </b><br> <font size='2'> <p style='color:black'> Capacity: <b>", table_complete1$`Capacity(AF)`," acre-feet</b>","<br> Storage: <b>", table_complete1$`Storage(AF)`, " acre-feet</b> <br> Percent of Capacity: <b>", table_complete1$`% of Capacity`,"%</b>")) %>% 
   lapply(htmltools::HTML)
 
 tag.map.title <- tags$style(HTML("
