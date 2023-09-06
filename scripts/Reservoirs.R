@@ -58,30 +58,36 @@ second_table_df1 <- second_table_df %>%
 table_complete <- left_join(table_df1, second_table_df1, by = c("StaID" = "ID"))
 
 
-write.csv(table_complete, "reservoir_table.csv", row.names = TRUE)
+table_complete1 <- table_complete %>% 
+  tidyr::separate(`LATITUDE&nbsp&nbsp&nbsp`, into = c("LATITUDE", "&nbsp&nbsp&nbsp"), sep = "&") %>% 
+  tidyr::separate(`LONGITUDE&nbsp&nbsp&nbsp`, into = c("LONGITUDE", "&nbsp&nbsp&nbsp1"), sep = "&") %>% 
+  dplyr::select(-c(`&nbsp&nbsp&nbsp`, `&nbsp&nbsp&nbsp1`))
 
 
-table_complete$LATITUDE <- as.numeric(table_complete$LATITUDE)
-table_complete$LONGITUDE <- as.numeric(table_complete$LONGITUDE)
-table_complete$`% of Average` <- as.numeric(table_complete$`% of Average`)
-table_complete$`% of Capacity` <- as.numeric(table_complete$`% of Capacity`)
+write.csv(table_complete1, "reservoir_table.csv", row.names = TRUE)
 
-table_complete <- table_complete %>% 
+
+table_complete1$LATITUDE <- as.numeric(table_complete1$LATITUDE)
+table_complete1$LONGITUDE <- as.numeric(table_complete1$LONGITUDE)
+table_complete1$`% of Average` <- as.numeric(table_complete1$`% of Average`)
+table_complete1$`% of Capacity` <- as.numeric(table_complete1$`% of Capacity`)
+
+table_complete1 <- table_complete1 %>% 
     mutate(desc = case_when(`% of Average` <= 50 ~ 'Under 75%',
                                   `% of Average` <= 99 ~ '75%-100%',
                                   `% of Average` >= 100 ~ 'Over 100%'))
   
   
-table_complete$COUNTY <- str_to_title(table_complete$COUNTY) 
-table_complete$`Reservoir Name` <- str_to_title(table_complete$`Reservoir Name`) 
-table_complete$River <- str_to_title(table_complete$River)
+table_complete1$COUNTY <- str_to_title(table_complete1$COUNTY) 
+table_complete1$`Reservoir Name` <- str_to_title(table_complete1$`Reservoir Name`) 
+table_complete1$River <- str_to_title(table_complete1$River)
 
 colors_reservoir <- c("#40E0D0", "#0096FF", "#3F00FF", "gray")
 
 labels <- c("Under 50%", "50% - 100%", "Over 100%", "No data")
 
-getColor <- function(table_complete) {
-  sapply(table_complete$`% of Capacity`, function(`% of Capacity`) {
+getColor <- function(table_complete1) {
+  sapply(table_complete1$`% of Capacity`, function(`% of Capacity`) {
     if(is.na(`% of Capacity`)) {
       "gray"
     } else if(`% of Capacity` <= 50) {
@@ -94,7 +100,7 @@ getColor <- function(table_complete) {
 }
 
 popups <- paste(sep = "",
-                paste(sep = "","<font size='3'><b><p style='color:#0059F6'>", table_complete$`Reservoir Name`, " <br> ", table_complete$`COUNTY`, " County </b><br> <font size='2'> <p style='color:black'> Capacity: <b>", table_complete$`Capacity(AF)`," acre-feet</b>","<br> Storage: <b>", table_complete$`Storage(AF)`, " acre-feet</b> <br> Percent of Capacity: <b>", table_complete$`% of Capacity`,"%</b>")) %>% 
+                paste(sep = "","<font size='3'><b><p style='color:#0059F6'>", table_complete$`Reservoir Name`, " <br> ", table_complete1$`COUNTY`, " County </b><br> <font size='2'> <p style='color:black'> Capacity: <b>", table_complete1$`Capacity(AF)`," acre-feet</b>","<br> Storage: <b>", table_complete1$`Storage(AF)`, " acre-feet</b> <br> Percent of Capacity: <b>", table_complete1$`% of Capacity`,"%</b>")) %>% 
   lapply(htmltools::HTML)
 
 tag.map.title <- tags$style(HTML("
@@ -153,17 +159,17 @@ reservoir_map <- leaflet(options = leafletOptions(zoomControl = FALSE, hoverToWa
   addProviderTiles(providers$CartoDB.PositronNoLabels, options = leafletOptions(zoomControl = FALSE, minZoom = 2, maxZoom = 10, dragging = FALSE)) %>%
   addProviderTiles(providers$CartoDB.PositronOnlyLabels, options = leafletOptions(pane = "maplabels", zoomControl = FALSE, minZoom = 4, maxZoom = 10, dragging = FALSE), group = "map labels") %>%
   setView(-122.1484334,37.8427456, zoom = 5.5) %>%
-addCircleMarkers(lng = table_complete$LONGITUDE, 
-                 lat = table_complete$LATITUDE, 
-                 color = getColor(table_complete),
-                 fillColor = getColor(table_complete),
+addCircleMarkers(lng = table_complete1$LONGITUDE, 
+                 lat = table_complete1$LATITUDE, 
+                 color = getColor(table_complete1),
+                 fillColor = getColor(table_complete1),
                  stroke = FALSE, 
                  fillOpacity = 0.5,
                  radius = 7,
                  label = popups, 
                  labelOptions = labelOptions(
                    direction = "auto")) %>% 
- addLegend(values = table_complete$`desc`, title = "Percent of Capacity",  position = 'bottomleft',
+ addLegend(values = table_complete1$`desc`, title = "Percent of Capacity",  position = 'bottomleft',
             #na.label = "No data",
             opacity = 1,
            colors = colors_reservoir,
