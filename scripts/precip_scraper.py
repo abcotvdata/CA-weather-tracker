@@ -14,8 +14,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 #from webdriver_manager.core.utils import ChromeType
 from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
@@ -81,7 +81,7 @@ print(last_month_year_str)
 
 #scrape last month
 url = "https://xmacis.rcc-acis.org/"
-driver = webdriver.Chrome(service=ChromeService(self.executable_path), options=chrome_options)
+driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 driver.get(url)
 
 #page = driver.execute_script("return document.documentElement.outerHTML")
