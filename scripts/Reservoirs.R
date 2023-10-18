@@ -185,7 +185,7 @@ url2 <- "https://wcc.sc.egov.usda.gov/reports/UpdateReport.html?report=Californi
 
 webpage1 <- read_html(url2)
 
-snowpack_table <- html_table(html_nodes(webpage1, "table")[[3]], fill = TRUE)
+snowpack_table <- html_table(html_nodes(webpage1, "update_report_table")[[3]], fill = TRUE)
 
 names(snowpack_table) <- snowpack_table[1,]
 snowpack_table <- snowpack_table[-1,]
