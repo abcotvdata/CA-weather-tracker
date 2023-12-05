@@ -81,7 +81,7 @@ print(last_month_year_str)
 
 #scrape last month
 url = "https://xmacis.rcc-acis.org/"
-driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+driver = webdriver.Chrome(service=chrome_service, options=options)
 driver.get(url)
 
 #page = driver.execute_script("return document.documentElement.outerHTML")
@@ -191,7 +191,7 @@ with open(filename,'a') as f:
     f.write(results)
     
 url = "https://xmacis.rcc-acis.org/"
-driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+driver = webdriver.Chrome(service=chrome_service, options=options)
 driver.get(url)
 
 #page = driver.execute_script("return document.documentElement.outerHTML")
