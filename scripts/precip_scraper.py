@@ -20,8 +20,9 @@ from selenium.webdriver.chrome.service import Service
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
+options.add_argument("-headless")
 options = [
-    "--headless=new",
+    "--headless",
     "--disable-gpu",
     "--window-size=1920,1200",
     "--ignore-certificate-errors",
