@@ -20,7 +20,7 @@ from selenium.webdriver.chrome.service import Service
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
-options.add_argument("-headless")
+chrome_options.add_argument("-headless")
 options = [
     "--headless",
     "--disable-gpu",
