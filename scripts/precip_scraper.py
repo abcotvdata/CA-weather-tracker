@@ -181,7 +181,7 @@ results = str(results)
 results = results.replace("<pre>", "")
 results = results.replace("<br/>", "\n")
 
-print(results)
+#print(results)
 
 filename = "CSVs/precip_sum_" + last_month_year_str + ".csv"
 
@@ -301,7 +301,7 @@ results = str(results)
 results = results.replace("<pre>", "")
 results = results.replace("<br/>", "\n")
 
-print(results)
+#print(results)
 
 filename = "CSVs/precip_sum_" + this_month_str + ".csv"
 
