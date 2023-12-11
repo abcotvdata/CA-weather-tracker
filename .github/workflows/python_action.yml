@@ -17,14 +17,14 @@ jobs:
           python-version: '3.12'
       - name: Installed package list
         run: apt list --installed
+      - name: Install all necessary packages
+        run: pip3 install requests beautifulsoup4 pandas webdriver-manager --upgrade chromedriver-autoinstaller selenium plotly.express datetime timedelta numpy json_normalize
       - name: Remove Chrome
         run: sudo apt purge google-chrome-stable
       - name: Remove default Chromium
         run: sudo apt purge chromium-browser
       - name: Install a new Chromium
         run: sudo apt install -y chromium-browser
-      - name: Install all necessary packages
-        run: pip3 install requests beautifulsoup4 pandas webdriver-manager --upgrade chromedriver-autoinstaller selenium --upgrade plotly.express datetime timedelta numpy json_normalize
       - name: Run the scraping script
         run: python scripts/precip_scraper.py
       - name: Commit and push if content changed
