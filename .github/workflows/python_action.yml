@@ -22,9 +22,9 @@ jobs:
       - name: Remove default Chromium
         run: sudo apt purge chromium-browser
       - name: Install a new Chromium
-        run: sudo apt install -y --upgrade chromium-browser
+        run: sudo apt install -y chromium-browser
       - name: Install all necessary packages
-        run: pip3 install requests beautifulsoup4 pandas webdriver-manager --upgrade chromedriver-autoinstaller selenium plotly.express datetime timedelta numpy json_normalize
+        run: pip3 install requests beautifulsoup4 pandas --upgrade webdriver-manager --upgrade chromedriver-autoinstaller selenium plotly.express datetime timedelta numpy json_normalize
       - name: Run the scraping script
         run: python scripts/precip_scraper.py
       - name: Commit and push if content changed
