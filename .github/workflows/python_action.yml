@@ -18,7 +18,8 @@ jobs:
       - name: Installed package list
         run: apt list --installed
       - uses: browser-actions/setup-chrome@v1
-      - run: chrome --version
+        with:
+            chrome-version: 120
       - name: Remove Chrome
         run: sudo apt purge google-chrome-stable
       - name: Remove default Chromium
