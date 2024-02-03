@@ -58,14 +58,14 @@ OXNARD VENTURA COUNTY AP, WBAN, Ventura, -119.204, 34.200, 39, 1.96
 BIG BEAR LAKE, COOP, San Bernardino, -116.917, 34.243, 6753, 1.70
 PIRU 2 ESE, COOP, Ventura, -118.757, 34.406, 712, 1.72
 SANTA BARBARA MUNI AP, WBAN, Santa Barbara, -119.842, 34.424, 8, 2.93
+BAKERSFIELD AP, WBAN, Kern, -119.055, 35.434, 490, 0.71
+TRONA, COOP, San Bernardino, -117.391, 35.764, 1695, 0.30
 SAUGUS POWER PLANT 1, COOP, Los Angeles, -118.454, 34.590, 2161, 1.10
 CACHUMA LAKE, COOP, Santa Barbara, -119.982, 34.582, 789, 2.42
 PALMDALE AP, WBAN, Los Angeles, -118.083, 34.629, 2509, 0.57
 LOMPOC AP, WBAN, Santa Barbara, -120.467, 34.667, 88, 0.89
 LANCASTER, WBAN, Los Angeles, -118.213, 34.741, 2338, 0.58
 SANDBERG, WBAN, Los Angeles, -118.725, 34.744, 4510, 1.80
-BAKERSFIELD AP, WBAN, Kern, -119.055, 35.434, 490, 0.71
-TRONA, COOP, San Bernardino, -117.391, 35.764, 1695, 0.30
 KETTLEMAN CITY, COOP, Kings, -119.960, 36.007, 240, 0.33
 KING CITY, COOP, Monterey, -121.138, 36.207, 320, 1.00
 BIG SUR STATION, COOP, Monterey, -121.780, 36.247, 200, 1.58
@@ -125,15 +125,6 @@ PORTOLA, COOP, Plumas, -120.472, 39.805, 4850, 0.20
 COLEMAN FISHERIES STATION, COOP, Shasta, -122.143, 40.400, 420, 1.21
 WHISKEYTOWN RESERVOIR, COOP, Shasta, -122.528, 40.612, 1295, 3.66
 SHASTA DAM, COOP, Shasta, -122.416, 40.714, 1075, 4.49
-DUNSMUIR TREATMENT PL, COOP, Siskiyou, -122.282, 41.183, 2169, 4.17
-JESS VALLEY, COOP, Modoc, -120.298, 41.271, 5319, T
-MCCLOUD, COOP, Siskiyou, -122.138, 41.252, 3233, 4.33
-FORT JONES RS, COOP, Siskiyou, -122.848, 41.601, 2729, 0.08
-CRESCENT CITY MCNAMARA AP, WBAN, Del Norte, -124.238, 41.784, 56, 0.72
-GASQUET RS, COOP, Del Norte, -123.967, 41.846, 387, 0.67
-TULELAKE, COOP, Siskiyou, -121.474, 41.960, 4038, T
-BARSTOW, COOP, San Bernardino, -117.022, 34.893, 2220, 0.50
-MARKLEY COVE, COOP, Napa, -122.124, 38.492, 480, 1.71
 LORAINE 5 NNE, COOP, Kern, -118.412, 35.384, 4235, 1.21
 LEE VINING, COOP, Mono, -119.119, 37.957, 6797, 0.55
 NEW MELONES DAM HQ, COOP, Tuolumne, -120.486, 38.005, 960, 1.35
@@ -157,11 +148,15 @@ MOUNT SHASTA, WBAN, Siskiyou, -122.317, 41.315, 3553, 0.55
 RED BLUFF MUNI AP, WBAN, Tehama, -122.255, 40.152, 354, 0.14
 NEEDLES AIRPORT, WBAN, San Bernardino, -114.618, 34.768, 888, 0.47
 SUSANVILLE 2SW, COOP, Lassen, -120.663, 40.417, 4212, 0.51
-BURBANK GLENDALE PASADENA AP, WBAN, Los Angeles, -118.365, 34.200, 731, 0.96
-MOUNT SHASTA, COOP, Siskiyou, -122.317, 41.322, 3613, 0.07
-WATSONVILLE MUNICIPAL AIRPORT, WBAN, Santa Cruz, -121.790, 36.939, 162, 0.41
-SANTA ROSA SONOMA CO AP, WBAN, Sonoma, -122.811, 38.504, 119, 0.65
-HEARST CASTLE, COOP, San Luis Obispo, -121.168, 35.684, 1526, 1.41
+DUNSMUIR TREATMENT PL, COOP, Siskiyou, -122.282, 41.183, 2169, 4.17
+JESS VALLEY, COOP, Modoc, -120.298, 41.271, 5319, T
+MCCLOUD, COOP, Siskiyou, -122.138, 41.252, 3233, 4.33
+FORT JONES RS, COOP, Siskiyou, -122.848, 41.601, 2729, 0.08
+CRESCENT CITY MCNAMARA AP, WBAN, Del Norte, -124.238, 41.784, 56, 0.72
+GASQUET RS, COOP, Del Norte, -123.967, 41.846, 387, 0.67
+TULELAKE, COOP, Siskiyou, -121.474, 41.960, 4038, T
+BARSTOW, COOP, San Bernardino, -117.022, 34.893, 2220, 0.50
+MARKLEY COVE, COOP, Napa, -122.124, 38.492, 480, 1.71
 IRVINE RANCH, COOP, Orange, -117.723, 33.720, 540, 0.77
 TORRANCE AIRPORT, WBAN, Los Angeles, -118.342, 33.802, 90, 3.53
 LOS ANGELES DOWNTOWN/USC, WBAN, Los Angeles, -118.291, 34.024, 179, 1.54
@@ -192,25 +187,18 @@ YUCCA MESA, COOP, San Bernardino, -116.407, 34.218, 3445, 0.18
 MORONGO VALLEY NORTH, COOP, San Bernardino, -116.562, 34.086, 3145, 0.87
 REDONDO BEACH, COOP, Los Angeles, -118.376, 33.834, 142, 2.14
 BURBANK VALLEY PUMP PLANT, COOP, Los Angeles, -118.348, 34.187, 655, 0.00
+BURBANK GLENDALE PASADENA AP, WBAN, Los Angeles, -118.365, 34.200, 731, 0.96
+MOUNT SHASTA, COOP, Siskiyou, -122.317, 41.322, 3613, 0.07
+WATSONVILLE MUNICIPAL AIRPORT, WBAN, Santa Cruz, -121.790, 36.939, 162, 0.41
+SANTA ROSA SONOMA CO AP, WBAN, Sonoma, -122.811, 38.504, 119, 0.65
+HEARST CASTLE, COOP, San Luis Obispo, -121.168, 35.684, 1526, 1.41
+Crescent City Area, ThreadEx, -, -, -, -, 0.72
+Tahoe City Area, ThreadEx, -, -, -, -, 0.33
+Ukiah Area, ThreadEx, -, -, -, -, 0.72
 PLACERVILLE 3 ENE, COOP, El Dorado, -120.742, 38.785, 2658, 1.81
 TAHOMA, COOP, El Dorado, -120.129, 39.060, 6315, 0.39
 CORONA MUNICIPAL AIRPORT, WBAN, Riverside, -117.602, 33.898, 533, 0.00
 VERDI 2W, COOP, Sierra, -120.027, 39.521, 5429, 0.20
-SOUTH LAKE F.S, COOP, Kern, -118.361, 35.647, 2654, 1.05
-Burbank Glendale Pasadena Area, ThreadEx, -, -, -, -, 0.96
-Camarillo Area, ThreadEx, -, -, -, -, 1.83
-Needles Area, ThreadEx, -, -, -, -, 0.47
-Palm Springs Area, ThreadEx, -, -, -, -, 0.48
-Riverside Area, ThreadEx, -, -, -, -, 0.63
-Ramona Area, ThreadEx, -, -, -, -, 0.81
-LONG VALLEY 2, COOP, Riverside, -116.642, 33.813, 8380, 1.50
-VALLEY CENTER 1N, COOP, San Diego, -117.038, 33.222, 1290, 1.38
-Northern CA 8 Station Index, null, -, -, -, -, 1.32
-San Joaquin 5 Station Index, null, -, -, -, -, 0.59
-Tulare 6 Station Index, null, -, -, -, -, 0.16
-Crescent City Area, ThreadEx, -, -, -, -, 0.72
-Tahoe City Area, ThreadEx, -, -, -, -, 0.33
-Ukiah Area, ThreadEx, -, -, -, -, 0.72
 Marble Creek, SCAN, Mono, -118.421, 37.778, 6183, 0.22
 Desert Center, SCAN, Riverside, -115.305, 33.802, 556, 0.36
 Ford Dry Lake, SCAN, Riverside, -115.098, 33.655, 394, 0.30
@@ -237,4 +225,16 @@ Merced Area, ThreadEx, -, -, -, -, 0.50
 San Jose Area, ThreadEx, -, -, -, -, 0.45
 MODESTO IRRIGATION DISTRICT, COOP, Stanislaus, -120.003, 37.644, 88, 0.96
 ALTURAS 9 ENE, COOP, Modoc, -120.364, 41.515, 5307, 0.01
-Vallecitos, SCAN, San Benito, -120.706, 36.460, 1620, 0.56</pre>
+Vallecitos, SCAN, San Benito, -120.706, 36.460, 1620, 0.56
+SOUTH LAKE F.S, COOP, Kern, -118.361, 35.647, 2654, 1.05
+Burbank Glendale Pasadena Area, ThreadEx, -, -, -, -, 0.96
+Camarillo Area, ThreadEx, -, -, -, -, 1.83
+Needles Area, ThreadEx, -, -, -, -, 0.47
+Palm Springs Area, ThreadEx, -, -, -, -, 0.48
+Riverside Area, ThreadEx, -, -, -, -, 0.63
+Ramona Area, ThreadEx, -, -, -, -, 0.81
+LONG VALLEY 2, COOP, Riverside, -116.642, 33.813, 8380, 1.50
+VALLEY CENTER 1N, COOP, San Diego, -117.038, 33.222, 1290, 1.38
+Northern CA 8 Station Index, null, -, -, -, -, 1.32
+San Joaquin 5 Station Index, null, -, -, -, -, 0.59
+Tulare 6 Station Index, null, -, -, -, -, 0.16</pre>
