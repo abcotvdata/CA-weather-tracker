@@ -165,7 +165,7 @@ go.click()
 time.sleep(1)
 
 wait = WebDriverWait(driver, 60)
-#wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="results_area"]/pre')))
+wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="results_area"]/pre')))
 
 time.sleep(1)
 
