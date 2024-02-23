@@ -137,7 +137,8 @@ tag.map.footer <- tags$style(HTML("
   }
   @media only screen and (max-width: 460px) {
     .leaflet-control.map-footer {
-      font-size: 8px;
+      visibility: hidden;
+      display: none;
     }
   }
 "))
