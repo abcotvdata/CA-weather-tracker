@@ -76,7 +76,12 @@ table_complete1 <- table_complete1 %>%
     mutate(desc = case_when(`% of Average` <= 50 ~ 'Under 75%',
                                   `% of Average` <= 99 ~ '75%-100%',
                                   `% of Average` >= 100 ~ 'Over 100%'))
-  
+
+table_complete1 <- table_complete1 %>% 
+  mutate(percent_capacity_popup = case_when(!is.na(`% of Capacity`) ~ (paste0(`% of Capacity`,"%")))) %>% 
+  mutate(percent_capacity_popup = replace_na(percent_capacity_popup, "no data available")) %>% 
+  mutate(storage_popup = case_when(!is.na(`Storage(AF)`) ~ (paste0(`Storage(AF)`," acre-feet")))) %>% 
+  mutate(storage_popup = replace_na(storage_popup, "no data available"))   
   
 table_complete1$COUNTY <- str_to_title(table_complete1$COUNTY) 
 table_complete1$`Reservoir Name` <- str_to_title(table_complete1$`Reservoir Name`) 
@@ -100,7 +105,7 @@ getColor <- function(table_complete1) {
 }
 
 popups <- paste(sep = "",
-                paste(sep = "","<font size='3'><b><p style='color:#0059F6'>", table_complete1$`Reservoir Name`, " <br> ", table_complete1$`COUNTY`, " County </b><br> <font size='2'> <p style='color:black'> Capacity: <b>", table_complete1$`Capacity(AF)`," acre-feet</b>","<br> Storage: <b>", table_complete1$`Storage(AF)`, " acre-feet</b> <br> Percent of Capacity: <b>", table_complete1$`% of Capacity`,"%</b>")) %>% 
+                paste(sep = "","<font size='3'><b><p style='color:#0059F6'>", table_complete1$`Reservoir Name`, " <br> ", table_complete1$`COUNTY`, " County </b><br> <font size='2'> <p style='color:black'> Capacity: <b>",  table_complete1$`Capacity(AF)`," acre-feet</b>","<br> Storage: <b>", table_complete1$`storage_popup`, "</b> <br> Percent of Capacity: <b>", table_complete1$`percent_capacity_popup`,"</b>")) %>% 
   lapply(htmltools::HTML)
 
 tag.map.title <- tags$style(HTML("
