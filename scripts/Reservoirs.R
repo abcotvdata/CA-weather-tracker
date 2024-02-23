@@ -151,7 +151,7 @@ today_display <- format(today, "%A, %b. %d, %Y")
 footer <- tags$div(
   tag.map.footer, HTML("<div> Source: California Department of Water Resources. </div> <div>Last updated",today_display,))
 
-reservoir_map <- leaflet(options = leafletOptions(zoomControl = FALSE, hoverToWake=FALSE)) %>%
+reservoir_map <- leaflet(options = leafletOptions(zoomControl = FALSE, hoverToWake=FALSE, attributionControl=FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
         L.control.zoom({ position: 'topright' }).addTo(this)
     }") %>%
