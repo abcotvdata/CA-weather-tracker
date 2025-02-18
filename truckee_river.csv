@@ -1,7 +1,7 @@
 "","Basin  Site Name","Elevation","Snow Totals","Daily Median Snow Totals","MedianPeak(in)","Median PeakDate","Percent of Today's Median","Percent of Median Peak","Basin"
 "1","Mt Rose Ski Area","8810","28.9","29.1","37.4","Apr 15","99","77","TRUCKEE RIVER"
 "2","Independence Lake","8340","36.3","31.5","45.1","Apr 25","115","80","TRUCKEE RIVER"
-"3","Big Meadow","8240","-M","15.3","21.0","Apr 01","*","*","TRUCKEE RIVER"
+"3","Big Meadow","8240","15.4","15.3","21.0","Apr 01","101","73","TRUCKEE RIVER"
 "4","Palisades Tahoe","8010","33.0","34.1","50.8","Apr 05","97","65","TRUCKEE RIVER"
 "5","Marlette Lake","7860","16.2","16.0","22.7","Mar 29","101","71","TRUCKEE RIVER"
 "6","Independence Camp","6970","13.3","10.4","17.4","Mar 24","128","76","TRUCKEE RIVER"
