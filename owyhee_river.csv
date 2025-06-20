@@ -1,7 +1,7 @@
 "","Basin  Site Name","Elevation","Snow Totals","Daily Median Snow Totals","MedianPeak(in)","Median PeakDate","Percent of Today's Median","Percent of Median Peak","Basin"
 "1","Jacks Peak","8440","-M","N/A","N/A","N/A","*","*","OWYHEE RIVER"
 "2","Toe Jam","7700","0.0","0.0","15.4","Apr 06","*","0*","OWYHEE RIVER"
-"3","Jack Creek Upper","7380","0.0","0.0","18.2","Apr 12","*","0*","OWYHEE RIVER"
+"3","Jack Creek Upper","7380","0.1","0.0","18.2","Apr 12","*","1*","OWYHEE RIVER"
 "4","Fawn Creek","7040","0.0","0.0","17.8","Apr 07","*","0*","OWYHEE RIVER"
 "5","Merritt Mountain","6920","-M","N/A","N/A","N/A","*","*","OWYHEE RIVER"
 "6","Big Bend","6890","0.0","0.0","10.0","Mar 18","*","0*","OWYHEE RIVER"
