@@ -59,9 +59,9 @@ table_complete <- left_join(table_df1, second_table_df1, by = c("StaID" = "ID"))
 
 
 table_complete1 <- table_complete %>% 
-  tidyr::separate(`LATITUDE&nbsp;&nbsp;&nbsp;`, into = c("LATITUDE", "&nbsp;&nbsp;&nbsp;"), sep = "&") %>% 
-  tidyr::separate(`LONGITUDE&nbsp;&nbsp;&nbsp;`, into = c("LONGITUDE", "&nbsp;&nbsp;&nbsp;1"), sep = "&") %>% 
-  dplyr::select(-c(`&nbsp;&nbsp;&nbsp;`, `&nbsp;&nbsp;&nbsp;1`))
+  tidyr::separate(`LATITUDE&nbsp&nbsp&nbsp`, into = c("LATITUDE", "&nbsp&nbsp&nbsp"), sep = "&") %>% 
+  tidyr::separate(`LONGITUDE&nbsp&nbsp&nbsp`, into = c("LONGITUDE", "&nbsp&nbsp&nbsp1"), sep = "&") %>% 
+  dplyr::select(-c(`&nbsp&nbsp&nbsp`, `&nbsp&nbsp&nbsp1`))
 
 
 write.csv(table_complete1, "reservoir_table.csv", row.names = TRUE)
