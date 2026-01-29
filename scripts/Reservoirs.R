@@ -59,8 +59,10 @@ table_complete <- left_join(table_df1, second_table_df1, by = c("StaID" = "ID"))
 
 
 table_complete1 <- table_complete %>% 
-  tidyr::separate(`LATITUDE&nbsp&nbsp&nbsp`, into = c("LATITUDE", "&nbsp&nbsp&nbsp"), sep = "&") %>% 
-  tidyr::separate(`LONGITUDE&nbsp&nbsp&nbsp`, into = c("LONGITUDE", "&nbsp&nbsp&nbsp1"), sep = "&") %>% 
+  rename(lat_raw = matches("LATITUDE"),
+         lon_raw = matches("LONGITUDE")) %>%
+  tidyr::separate(`lat_raw`, into = c("LATITUDE", "&nbsp&nbsp&nbsp"), sep = "&") %>% 
+  tidyr::separate(`lon_raw`, into = c("LONGITUDE", "&nbsp&nbsp&nbsp1"), sep = "&") %>% 
   dplyr::select(-c(`&nbsp&nbsp&nbsp`, `&nbsp&nbsp&nbsp1`))
 
 
