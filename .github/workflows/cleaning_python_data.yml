@@ -18,7 +18,9 @@ jobs:
         run: |
           brew install gdal
       - name: Install dependencies and packages
-        run: Rscript -e 'install.packages(c("tidyverse","stringr","readr","dplyr","tidyr","sf","leaflet","htmlwidgets", "htmltools","leaflet.providers","leaflet.extras","here","readxl","rvest","janitor","fauxnaif", "raster", "zoo", "ggplot2", "gdal"))'
+        run: Rscript -e 'install.packages(c("tidyverse","stringr","readr","dplyr","tidyr","sf","leaflet","htmlwidgets", "htmltools","leaflet.providers","here","readxl","rvest","janitor","fauxnaif", "raster", "zoo", "ggplot2", "gdal", "devtools", "remotes"))'
+      - name: Install package from GitHub using devtools
+        run: Rscript -e 'devtools::install_github("trafficonese/leaflet.extras")'
       - name: run script to fix raw data
         run: Rscript scripts/cleaning-monthly-data.R
       - name: Commit results
