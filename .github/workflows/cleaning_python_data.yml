@@ -9,6 +9,8 @@ jobs:
   render:
     name: clean latest data
     runs-on: macos-latest
+    env:
+      GITHUB_PAT: ${{ secrets.PAT }}
     steps:
       - uses: actions/checkout@v3
       - uses: r-lib/actions/setup-r@v2
