@@ -166,7 +166,7 @@ reservoir_map <- leaflet(options = leafletOptions(zoomControl = FALSE, hoverToWa
   addMapPane(name = "maplabels", zIndex = 420) %>%
   #addProviderTiles(providers$CartoDB.PositronNoLabels, options = leafletOptions(zoomControl = FALSE, minZoom = 2, maxZoom = 10, dragging = FALSE)) %>%
   #addProviderTiles(providers$CartoDB.PositronOnlyLabels, options = leafletOptions(pane = "maplabels", zoomControl = FALSE, minZoom = 4, maxZoom = 10, dragging = FALSE), group = "map labels") %>%
-  addTiles(urlTemplate = "https://pmtiles-raster.launch.studioshare.wds.io/styles/grayscale-abc/{z}/{x}/{y}.png", attribution = "ABC OTV \xc2\xb7 \xc2\xa9 Protomaps \xc2\xa9 OpenStreetMap", options = tileOptions(maxNativeZoom = 15, maxZoom = 19)) %>% 
+  addTiles(urlTemplate = "https://pmtiles-raster.launch.studioshare.wds.io/styles/white-abc/{z}/{x}/{y}.png", attribution = "ABC OTV \xc2\xb7 \xc2\xa9 Protomaps \xc2\xa9 OpenStreetMap", options = tileOptions(maxNativeZoom = 15, maxZoom = 19)) %>% 
   setView(-122.1484334,37.8427456, zoom = 5.5) %>%
 addCircleMarkers(lng = table_complete1$LONGITUDE, 
                  lat = table_complete1$LATITUDE, 
