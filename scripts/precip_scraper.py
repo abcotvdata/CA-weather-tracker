@@ -93,7 +93,7 @@ multistation.click()
 
 time.sleep(1)
 
-monthlydata = driver.find_element(By.XPATH, '//*[@id="ui-id-18"]')
+monthlydata = driver.find_element(By.XPATH, '//ul[@id="multi-menu"]/li[contains(text(),"Monthly Data")]')
 monthlydata.click()
 
 time.sleep(1)
@@ -203,7 +203,7 @@ multistation.click()
 
 time.sleep(1)
 
-daterange = driver.find_element(By.XPATH, '//*[@id="ui-id-19"]')
+daterange = driver.find_element(By.XPATH, '//ul[@id="multi-menu"]/li[contains(text(),"Data for Date Range")]')
 daterange.click()
 
 time.sleep(1)
